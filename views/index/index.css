@@ -1,0 +1,149 @@
+/*首页样式表*/
+@import url('../common/nav.css');
+@import url('../common/loginBar.css');
+@import url('../common/footer.css');
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+html{
+    font-size:100%;
+}
+
+li{list-style-type: none;}
+a{text-decoration: none;}
+
+/*导航栏*/
+.nav .nav-index{
+    background-color:#efebf8;
+    border-bottom:4px solid #5BAEFF
+}
+.nav li a[class=nav-index]:hover,
+.nav li a[class=nav-index]:focus,
+.nav li a[class=nav-index]:active{
+    color:#333;
+}
+
+.bg-index{
+    width:96%;
+    height:auto;
+    margin:1em 2%;
+}
+
+/*
+    教学成果
+*/
+
+#achievement,#team-info{
+    text-align:center;
+}
+
+#achievement > h1,#team-info > h1{
+    font-family: 'Kaiti',Georgia,Serif;
+}
+#achievement > span,#team-info > span{
+    font-family: 'Microsoft YaHei';
+    color:#9a2e2e;
+}
+
+#achievement > span:before,#achievement > span:after,
+#team-info > span:before,#team-info > span:after{
+    content: "";
+    display: inline-block;
+    width: 64px;
+    border-top:1px solid #9a2e2e;
+    margin:0 5px 6px 5px;
+}
+.achievement-list{
+    margin-top:2em;
+    overflow: hidden;
+}
+.achievement-list fieldset{
+    min-height:180px;
+    width:20%;
+    border:2px solid #005981;
+    color:#005981;
+    margin-right:1.5em;
+    text-align: left;
+    float:left;
+    overflow: hidden;
+    padding:.5em ;
+}
+
+
+.achievement-list fieldset:first-child{
+    margin-left:4.3%;
+}
+
+.achievement-list fieldset legend{
+    font-family: "Microsoft YaHei";
+    font-size: 25px;
+    font-weight:500;
+}
+
+.achievement-list fieldset li{
+    font-size:14px;
+    line-height:24px;
+    list-style-type: disc;
+    margin-left:1em;
+}
+
+/*
+    关于我们
+*/
+
+#team-info{
+    margin:2em 2% 0 2%;
+    padding:1em 6% 3em 6%;
+    background-color: #e7e8ea;
+}
+
+#team-info p{
+    text-indent: 2em;
+    color: #022135;
+    text-align:left;
+    margin-top:1em;
+    font-family: 'Kaiti', Georgia, Serif;
+    line-height: 22px;
+}
+
+
+@media (max-width: 1170px){
+    .achievement-list fieldset{
+        min-height:200px;
+    }
+    .achievement-list fieldset{
+        margin-right:.5em;
+    }
+}
+
+@media (max-width: 992px){
+    .achievement-list fieldset{
+        float:none;
+        width:80%;
+        min-height:170px;
+        margin:0 auto 1em auto;
+    }
+    .achievement-list fieldset:first-child{
+        margin-left:auto;
+    }
+}
+
+@media (max-width: 768px){
+    #footer .link-dis-none{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

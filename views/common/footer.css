@@ -1,0 +1,39 @@
+#footer{
+    margin:4em 2% 1em 2%;
+}
+
+.friendLink{
+    padding-top:.4em;
+    border-top:1px solid #ccc;
+    text-align: center;
+}
+
+.friendLink-list li{
+    display: inline;
+    margin:4em 1em;
+}
+
+.friendLink-list li a{
+    color:#999;
+}
+
+.friendLink-list li a:hover,
+.friendLink-list li a:focus,
+.friendLink-list li a:active{
+    color:#4A708B;
+}
+
+.copyRight{
+    background-color:#EEE;
+    text-align: center;
+    margin-top:1em;
+}
+
+.copyRight p{
+    color:#333;
+}
+
+
+#footer .link-dis-none{
+    display: none;
+}

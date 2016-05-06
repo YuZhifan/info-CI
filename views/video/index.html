@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+        <ul class="comment-list">
+           <li class="comment-row">
+                <img src=<?=base_url().$row['comment_src']?>>
+                <p class="comment-row-title">
+                    <strong><?=$row['user_nicename']?></strong><span><?=$row['comment_time']?></span>
+                </p>
+                <p><?=$row['comment']?></p>
+            </li>  
+</body>
+</html>

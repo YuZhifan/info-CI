@@ -1,0 +1,28 @@
+/*自测训练
+* 选择范围，IE不支持hidden属性
+*
+*/
+#select-test{
+    display: none;
+}
+
+
+@media (max-width: 1170px){
+    .nav li a{
+        font-size:1.2em;
+    }
+}
+
+@media (max-width: 992px){
+    .title span,.title strong{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .title strong{
+        top:14px;
+        display:inline;
+        white-space:nowrap;
+    }
+}
