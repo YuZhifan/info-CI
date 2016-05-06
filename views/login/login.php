@@ -7,10 +7,10 @@
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
         <title>信息论-登录</title>
         <!-- <link rel="shortcut icon" href="../favicon.ico">  -->
-        <link rel="stylesheet" type="text/css" href="./demo.css" />
-        <link rel="stylesheet" type="text/css" href="./login.css" />
-        <link rel="stylesheet" type="text/css" href="./style.css" />
-		<link rel="stylesheet" type="text/css" href="./animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/demo.css"?> />
+        <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/login.css"?> />
+        <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/style.css"?> />
+		<link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/animate-custom.css"?> />
     </head>
     <body>
         <div class="container">
