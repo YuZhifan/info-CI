@@ -22,9 +22,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$this->load->view('common\nav');
-		$this->load->view('index\welcome_message');
-		$this->load->view('common\footer');
+		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$this->load->view('index\welcome_message',$data);
+		
 		
 		
 		if($_SESSION[username])

@@ -14,6 +14,8 @@
     <script src=<?=base_url().'views/common/common.js'?>></script>
 </head>
 <body id="body">
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <div class="feedback-msg">
     <div class="msg-box">
         <p>亲爱的同学们：</p>
@@ -95,7 +97,8 @@
     </ul>
     <input type="submit" value="提  交"/>
 </form>
-
+<!--页脚-->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/feedback/feedback.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

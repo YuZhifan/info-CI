@@ -13,7 +13,8 @@
     <![endif]-->
 </head>
 <body id="body">
-
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <div class="subNav">
     <p>
         <a href="#" data-target="list-leader" class="choose">主讲老师</a>
@@ -345,7 +346,8 @@
         </p>
     </section>
 </div>
-
+<!-- 页脚 -->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/introduction/introduction.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

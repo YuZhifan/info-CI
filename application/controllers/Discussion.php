@@ -22,8 +22,8 @@ class Discussion extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$this->load->view('common\nav');
-		$this->load->view('discussion\discussion');
-		$this->load->view('common\footer');
+		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$this->load->view('discussion\discussion', $data);
 	}
 }

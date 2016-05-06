@@ -13,6 +13,8 @@
     <![endif]-->
 </head>
 <body>
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <div class="exercise-type">
     <div class="type-title">
         <a href="#" class="type-current" data-type="chapter">章节练习</a>
@@ -65,8 +67,8 @@
 
     </div>
 </div>
-
-
+<!--页脚-->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/exercise/exercise.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

@@ -22,17 +22,17 @@ class Video extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$this->load->view('common\nav');
+		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
 		// $this->load->model(DB_model);
 		// $query=$this->DB_model->select("select *from tb_videocomment;");
 		// $row=$query->result_array();
-		$this->load->view('video/video'); 	
+		$this->load->view('video/video',$data); 	
 		
 		
 		// $this->load->model(Video_model);
 		// $this->Video_model->comment();
-		
-		$this->load->view('common\footer');
+	
 
 // 		$this->load->model(video_model);
 // 		$this->load->database();

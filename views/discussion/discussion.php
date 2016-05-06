@@ -13,10 +13,8 @@
     <script src=<?=base_url().'views/common/common.js'?>></script>
 </head>
 <body id="body">
-<!--添加登录条-->
-<include file="./loginBar"/>
-<!--添加导航栏-->
-<include file="./nav"/>
+<!-- 导航栏 -->
+<?=$infoNav;?>
 
 <div class="lecture-wrap">
     <div class="lecture">
@@ -89,8 +87,8 @@
         </div>
     </div>
 </div>
-<!--添加页尾-->
-<include file="./footer"/>
+<!--页脚-->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/discussion/discussion.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

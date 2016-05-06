@@ -17,7 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
 </head>
 <body id="body">
-
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <img src=<?=base_url().'views/index/img/bg-index.png'?> class="bg-index">
 <div id="achievement">
     <h1>教学成果</h1>
@@ -76,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </p>
 
 </div>
-
+<!-- 页脚 -->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/index/index.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

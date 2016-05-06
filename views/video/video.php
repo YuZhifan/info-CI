@@ -13,7 +13,8 @@
     <![endif]-->
 </head>
 <body>
-
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <div class="video-wrap">
     <div class="video">
         <div class="video-box">
@@ -80,7 +81,8 @@
         </div>
     </div>
 </div>
-
+<!-- 页脚 -->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/video/video.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

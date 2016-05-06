@@ -13,7 +13,8 @@
     <![endif]-->
 </head>
 <body id="body">
-
+<!-- 导航栏 -->
+<?=$infoNav;?>
 <div class="tab-wrap">
     <ul>
         <li class="tab-video tab-choose" data-box="box-video">教学录像</li>
@@ -55,7 +56,8 @@
         <strong>当前类别暂无资源</strong>
     </div>
 </div>
-
+<!-- 页脚 -->
+<?=$infoFooter;?>
 <script src=<?=base_url().'views/resource/resource.js'?>></script>
 
 <!--让IE8支持媒体查询-->
