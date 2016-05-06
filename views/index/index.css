@@ -9,6 +9,7 @@
 }
 html{
     font-size:100%;
+    min-width: 340px;
 }
 
 li{list-style-type: none;}
@@ -17,7 +18,8 @@ a{text-decoration: none;}
 /*导航栏*/
 .nav .nav-index{
     background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF
+    border-bottom:4px solid #5BAEFF;
+    border-radius: 8px;
 }
 .nav li a[class=nav-index]:hover,
 .nav li a[class=nav-index]:focus,

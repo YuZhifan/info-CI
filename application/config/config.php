@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://localhost/www/Test/';
 //$config['base_url'] = 'http://192.168.199.151/www/Test/';
-$config['base_url'] = 'http://localhost/info-CodeIgniter/';
+$config['base_url'] = 'http://localhost/info-CI/';
 
 
 /*

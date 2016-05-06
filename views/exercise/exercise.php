@@ -5,6 +5,7 @@
     <title>信息论-自测训练</title>
     <link href=<?=base_url().'views/exercise/exercise.css'?> rel="stylesheet" type="text/css">
     <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
+    <script src=<?=base_url().'views/common/common.js'?>></script>
     <!--IE8只能支持jQuery1.9-->
     <!--[if lte IE 8]>
     <link href=<?=base_url().'views/common/IE.css'?> rel="stylesheet" type="text/css">
@@ -12,11 +13,6 @@
     <![endif]-->
 </head>
 <body>
-<!--添加登录条-->
-<include file="./loginBar"/>
-<!--添加导航栏-->
-<include file="./nav"/>
-
 <div class="exercise-type">
     <div class="type-title">
         <a href="#" class="type-current" data-type="chapter">章节练习</a>
@@ -71,10 +67,6 @@
 </div>
 
 
-<!--添加页尾-->
-<include file="./footer"/>
-
-<script src=<?=base_url().'views/index/index.js'?>></script>
 <script src=<?=base_url().'views/exercise/exercise.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

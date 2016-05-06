@@ -5,6 +5,7 @@
     <title>信息论-讨论交流</title>
     <link href=<?=base_url().'views/feedback/feedback.css'?> rel="stylesheet" type="text/css">
     <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
+    <script src=<?=base_url().'views/common/common.js'?>></script>
     <!--IE8只能支持jQuery1.9-->
     <!--[if lte IE 8]>
     <link href="__PUBLIC__/Common/Css/IE.css" rel="stylesheet" type="text/css">
@@ -95,9 +96,6 @@
     <input type="submit" value="提  交"/>
 </form>
 
-<!--添加页尾-->
-<include file="./footer"/>
-<script src=<?=base_url().'views/index/index.js'?>></script>
 <script src=<?=base_url().'views/feedback/feedback.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

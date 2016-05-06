@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>信息论-首页</title>
     <link href=<?=base_url().'views/index/index.css'?> rel="stylesheet" type="text/css">
     <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
+    <script src=<?=base_url().'views/common/common.js'?>></script>
     <!--IE8只能支持jQuery1.9-->
     <!--[if lte IE 8]>
     <link href=<?=base_url().'views/common/Css/IE.css'?> rel="stylesheet" type="text/css">
@@ -16,10 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
 </head>
 <body id="body">
-<!--添加登录条-->
-<include file="index.php/loginBar"/>
-<!--添加导航栏-->
-<include file="index.php/nav"/>
+
 <img src=<?=base_url().'views/index/img/bg-index.png'?> class="bg-index">
 <div id="achievement">
     <h1>教学成果</h1>
@@ -78,8 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </p>
 
 </div>
-<!--添加页尾-->
-<include file="index.php/footer"/>
+
 <script src=<?=base_url().'views/index/index.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

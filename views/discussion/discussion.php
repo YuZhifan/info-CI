@@ -91,7 +91,6 @@
 </div>
 <!--添加页尾-->
 <include file="./footer"/>
-<script src=<?=base_url().'views/index/index.js'?>></script>
 <script src=<?=base_url().'views/discussion/discussion.js'?>></script>
 <!--让IE8支持媒体查询-->
 <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>

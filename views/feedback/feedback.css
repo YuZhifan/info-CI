@@ -17,7 +17,8 @@ a{text-decoration: none;}
 /*导航栏*/
 .nav .nav-feedback{
     background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF
+    border-bottom:4px solid #5BAEFF;
+    border-radius: 8px;
 }
 .nav li a[class=nav-feedback]:hover,
 .nav li a[class=nav-feedback]:focus,
