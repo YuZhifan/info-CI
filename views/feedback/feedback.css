@@ -6,26 +6,15 @@
     margin:0;
     padding:0;
 }
+html{
+    min-width: 426px;
+}
 body{
     /*min-width:420px;*/
     color:#333;
 }
 li{list-style-type: none;}
 a{text-decoration: none;}
-
-
-/*导航栏*/
-.nav .nav-feedback{
-    background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF;
-    border-radius: 8px;
-}
-.nav li a[class=nav-feedback]:hover,
-.nav li a[class=nav-feedback]:focus,
-.nav li a[class=nav-feedback]:active{
-    color:#333;
-}
-
 
 .feedback-msg {
     position: absolute;
@@ -136,3 +125,15 @@ a{text-decoration: none;}
     font-size:1.4em;
 }
 
+
+@media (max-width: 768px) {
+    .question{
+        margin-top:4em;
+    }
+}
+
+@media (max-width: 510px) {
+   .question li label{
+    margin:0 .4em;
+    }
+}

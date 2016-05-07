@@ -10,6 +10,7 @@
     <!--[if lte IE 8]>
     <link href=<?=base_url().'views/common/IE.css'?> rel="stylesheet" type="text/css">
     <script src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -61,6 +62,7 @@
     <p class="subTitle">comment</p>
     <form action="#">
         <textarea rows="4" cols="100" id="comment-submit" ></textarea>
+        <span class="comment-msg"></span>
         <input type="submit" value="提交评论" />
     </form>
     <div class="comment-box">
@@ -84,7 +86,5 @@
 <!-- 页脚 -->
 <?=$infoFooter;?>
 <script src=<?=base_url().'views/video/video.js'?>></script>
-<!--让IE8支持媒体查询-->
-<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
 </body>
 </html>

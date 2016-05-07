@@ -3,6 +3,12 @@
  */
 
 $(document).ready(function(){
+    $(".nav-resource").addClass("nav-current");
+});
+
+
+
+$(document).ready(function(){
     $(".tab-wrap ul li").click(function(){
         var currentTab = $(".tab-choose");
         var chooseTab = $(this);

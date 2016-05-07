@@ -12,18 +12,6 @@ body{
 li{list-style-type: none;}
 a{text-decoration: none;}
 
-
-/*导航栏*/
-.nav .nav-discussion{
-    background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF;
-    border-radius: 8px;
-}
-.nav li a[class=nav-discussion]:hover,
-.nav li a[class=nav-discussion]:focus,
-.nav li a[class=nav-discussion]:active{
-    color:#333;
-}
 .dis-none{display: none;}
 
 .lecture-wrap{

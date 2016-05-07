@@ -14,19 +14,6 @@ li{list-style-type: none;}
 a{text-decoration: none;}
 
 
-/*导航栏*/
-.nav .nav-introduction{
-    background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF;
-    border-radius: 8px;
-}
-.nav li a[class=nav-introduction]:hover,
-.nav li a[class=nav-introduction]:focus,
-.nav li a[class=nav-introduction]:active{
-    color:#333;
-}
-
-
 
 /*子导航栏*/
 .subNav{

@@ -7,18 +7,6 @@
     padding:0;
 }
 
-/*导航栏*/
-.nav .nav-video{
-    background-color:#efebf8;
-    border-bottom:4px solid #5BAEFF;
-    border-radius: 8px;
-}
-.nav li a[class=nav-video]:hover,
-.nav li a[class=nav-video]:focus,
-.nav li a[class=nav-video]:active{
-    color:#333;
-}
-
 .video-wrap{
     padding:1em 0;
     position: relative;
@@ -126,9 +114,17 @@
     line-height: 18px;
     margin:1em auto .5em auto;
     padding:.3em;
-    border:1px solid #ccc;
+    border:1px solid #CCC;
+    outline-width: 0;
+    outline-color: #C39192;
 }
 
+.comment .comment-msg{
+    color: #9a2e2e;
+    font-family: "Kaiti";
+    margin-right:5px;
+    font-size:14px;
+}
 
 .comment form input{
     margin-right:15%;

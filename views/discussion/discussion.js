@@ -2,6 +2,11 @@
  * Created by Felix on 2016/4/23.
  */
 
+$(document).ready(function(){
+    $(".nav-discussion").addClass("nav-current");
+});
+
+
 //分页跳转
 $(document).ready(function(){
     function jump(current,newPage){
@@ -38,12 +43,24 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".discussion-form").submit(function(){
         var discussionType = $(".discussion-form label  input[name='discussion-type']:checked").val();
-        console.log(discussionType);
-        if(!discussionType){
+        
+        if(!discussionType){//必须选择类型
             $(".discussion-form .msg").html("请选择留言类型...");
             return false;
         }
-        return false;
+
+        var content = $(".discussion-form textarea").val();
+
+        if(!content.length){//必须输入留言
+            $(".discussion-form .msg").html("请输入留言...");
+            return false;
+        }
+
+        console.log("留言类型：" + discussionType);
+        console.log("留言内容：" + content);
+
+
+        return true;
     });
 
     $(".discussion-form textarea").focus(function(){

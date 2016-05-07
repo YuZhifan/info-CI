@@ -2,6 +2,10 @@
  * Created by Felix on 2016/4/24.
  */
 
+ $(document).ready(function(){
+    $(".nav-introduction").addClass("nav-current");
+});
+
 $(document).ready(function(){
     //显示主讲老师内容
     $("#list-leader").fadeIn(600);

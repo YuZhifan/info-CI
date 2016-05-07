@@ -1,6 +1,10 @@
 /**
  * Created by Felix on 2016/4/25.
  */
+$(document).ready(function(){
+    $(".nav-feedback").addClass("nav-current");
+});
+
 
 $(document).ready(function(){
 

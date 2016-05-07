@@ -5,6 +5,18 @@ a{text-decoration: none;}
     margin:16px auto 0 6%;
 }
 
+/*导航栏*/
+.nav .nav-current{
+    background-color:#efebf8;
+    border-bottom:4px solid #5BAEFF;
+    border-radius: 5px;
+}
+.nav li a[class=nav-current]:hover,
+.nav li a[class=nav-current]:focus,
+.nav li a[class=nav-current]:active{
+    color:#333;
+}
+
 .logo{
     height:2.5em;
     width:2.5em;

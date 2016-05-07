@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--[if lte IE 8]>
     <link href=<?=base_url().'views/common/Css/IE.css'?> rel="stylesheet" type="text/css">
     <script src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
 <body id="body">
@@ -80,7 +81,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- 页脚 -->
 <?=$infoFooter;?>
 <script src=<?=base_url().'views/index/index.js'?>></script>
-<!--让IE8支持媒体查询-->
-<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+
 </body>
 </html>

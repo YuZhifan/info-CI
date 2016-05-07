@@ -1,6 +1,11 @@
 /**
  * Created by Felix on 2016/4/22.
  */
+
+$(document).ready(function(){
+    $(".nav-video").addClass("nav-video");
+});
+
  // 载入评论
 $(document).ready(function(){
     console.log("item");
@@ -56,3 +61,76 @@ $(document).ready(function(){
 
     });
 });
+
+
+// 评论验证
+$(document).ready(function(){
+    // 输入框获得焦点，验证登录状态
+    $(".comment textarea").focusin(function(){
+        var flag = "no";
+        var msg = $(".comment .comment-msg");
+        msg.html("");
+        // $.get("url",,function(){
+        //     flag = "从数据库获得的值";
+        // },"html");
+        if(flag === "no"){
+            msgAnimate();
+            msg.html("请先登录...");
+        }
+    });
+
+    // 提交表单验证评论长度
+    $(".comment form").submit(function(){   
+
+        var flag = "yes";
+        var msg = $(".comment .comment-msg");
+        if(flag === "no"){
+            msg.html("请先登录...");
+            return false;
+        }else{
+            var content = msg.val();
+            if(content.length < 15){
+                
+                msg.html("评论不少于15字...");
+                msg.show(100,"linear");
+                return false;
+            }
+        }  
+    });
+
+    //输入框闪烁效果 
+    function msgAnimate(){
+        var textarea =$(".comment form textarea");
+            console.log("animate");
+            textarea.animate({//显示
+                "outline-width": "1px",
+            },100);
+
+            setTimeout(function(){
+                textarea.animate({//隐藏
+                    "outline-width": "0",
+                },100);
+
+                setTimeout(function(){
+                    textarea.animate({//显示
+                        "outline-width": "1px",
+                    },100);
+
+                    setTimeout(function(){
+                        textarea.animate({//隐藏
+                            "outline-width": "0",
+                        },200);
+                    },200);
+
+                },200);
+
+            },150);
+
+
+            
+
+            
+            
+        } 
+});
+
