@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 	public function password_check($str)
     {
 		
-		$query=$this->DB_model->select("select id from tb_users where user_login = '".set_value(username)."' and user_pass = '".set_value(password)."'");//可用于检测用户名是否已被注册
+		$query=$this->DB_model->select("select id,user_nicename from tb_users where user_login = '".set_value(username)."' and user_pass = '".set_value(password)."'");//可用于检测用户名是否已被注册
         if ($query->result()==null)//空则登录失败
         {
 //             $this->form_validation->set_message('password_check', 'The username or password is wrong!');
@@ -59,6 +59,12 @@ class Login extends CI_Controller {
         }
         else
         {
+        	$row = $query->row();
+        	if (isset($row))
+        	{
+        		$_SESSION[id]=$row->id;
+        		$_SESSION[user_nicename]=$row->user_nicename;
+        	}
             return TRUE;
         }
     }
