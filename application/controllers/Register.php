@@ -21,6 +21,7 @@ class Register extends CI_Controller {
 	public function index()
 	{
 		session_start();
+		$this->load->helper('url');
 		$this->load->library('form_validation');
 		$this->load->model(DB_model);
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[15]|callback_username_check');
@@ -30,7 +31,7 @@ class Register extends CI_Controller {
 		
 		if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('register/register');
+            $this->load->view('login/login');
         }
         else
         {
@@ -49,12 +50,11 @@ class Register extends CI_Controller {
 	}
 	
 	public function username_check($str)
-    {
-		
+    {		
 		$query=$this->DB_model->select("select id from tb_users where user_login = '".$str."'");//可用于检测用户名是否已被注册
         if ($query->result()!=null)//已被注册则不为空
         {
-            $this->form_validation->set_message('username_check', 'The {field} has existed!');
+//            $this->form_validation->set_message('username_check', 'The {field} has existed!');
             return FALSE;
         }
         else

@@ -21,6 +21,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		session_start();
+		$this->load->helper('url');
 		$this->load->library('form_validation');
 		$this->load->model(DB_model);
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[15]');
@@ -28,7 +29,7 @@ class Login extends CI_Controller {
 		
 		if ($this->form_validation->run() == FALSE)
         {
-        	$this->load->helper('url');
+        	
             $this->load->view('login/login');
         }
         else
@@ -53,7 +54,7 @@ class Login extends CI_Controller {
 		$query=$this->DB_model->select("select id from tb_users where user_login = '".set_value(username)."' and user_pass = '".set_value(password)."'");//可用于检测用户名是否已被注册
         if ($query->result()==null)//空则登录失败
         {
-            $this->form_validation->set_message('password_check', 'The username or password is wrong!');
+//             $this->form_validation->set_message('password_check', 'The username or password is wrong!');
             return FALSE;
         }
         else
