@@ -26,7 +26,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="doAction.php?act=login" autocomplete="on" method="post"> 
+                            <form  action="login" autocomplete="on" method="post"> 
                                 <h1>登 录</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > 用户名  </label>
@@ -51,7 +51,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="doAction.php?act=reg" autocomplete="on" method="post"> 
+                            <form  action="register" autocomplete="on" method="post"> 
                                 <h1> 注 册 </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">用户名</label>
@@ -60,6 +60,10 @@
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">密码 </label>
                                     <input id="passwordsignup" name="password" required="required" type="password" placeholder="******"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">确认密码 </label>
+                                    <input id="passwordsignup" name="passconf" required="required" type="password" placeholder="******"/>
                                 </p>
 								<p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > 邮箱</label>
