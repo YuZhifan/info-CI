@@ -63,4 +63,35 @@ class Video extends CI_Controller {
 		$this->load->model(Video_model);
 		$this->Video_model->comment();
 	}
+	
+	public function addComment()
+	{
+		$this->load->helper('url');
+		$this->load->library('form_validation');
+		session_start();
+		$this->form_validation->set_rules('comment', 'Comment', 'required|min_length[1]|max_length[150]');
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+			header('Location:../video');
+		}
+		else
+		{
+		
+			if($_SESSION[username]&&$_SESSION[id])
+			{
+				$this->load->model(Video_model);
+				$comment=set_value(comment);
+				$this->Video_model->add($comment);	
+				
+				
+				header('Location:../video');
+			}else{
+				$this->load->model(DB_model);
+				header('Location:../video');
+			}
+		
+		}
+		
+	}
 }

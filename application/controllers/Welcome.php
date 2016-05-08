@@ -39,7 +39,6 @@ class Welcome extends CI_Controller {
 		$this->load->model(DB_model);
 		$_SESSION[last_login_ip]=$this->input->ip_address();
 		$this->DB_model->update("UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';");
-		
 		}else{
 			// echo fasle;
 		}

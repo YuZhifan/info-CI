@@ -42,10 +42,15 @@ class Register extends CI_Controller {
 			$time = time();
 			$_SESSION[last_login_time] = mdate($datestring, $time);
 			$_SESSION[username]=set_value(username);
+			$this->DB_model->insert("INSERT INTO tb_users (user_login,user_pass,user_nicename,user_email,last_login_time,create_time) values ('".set_value(username)."','".set_value(password)."','".set_value(username)."','".set_value(email)."','".$_SESSION[last_login_time]."','".$_SESSION[last_login_time]."');");
+			$query=$this->DB_model->select("select id,user_nicename from tb_users where user_login = '".set_value(username)."' and user_pass = '".set_value(password)."'");
+			$row = $query->row();
+			if (isset($row))
+			{
+				$_SESSION[id]=$row->id;
+				$_SESSION[user_nicename]=$row->user_nicename;
+			}
 			header('Location:welcome/../');
-			$this->DB_model->insert("INSERT INTO tb_users (user_login,user_pass,user_nicename,user_email,last_login_time,create_time) values ('".set_value(username)."','".set_value(password)."','新用户','".set_value(email)."','".$_SESSION[last_login_time]."','".$_SESSION[last_login_time]."');");
-			
-            
         }
 	}
 	
