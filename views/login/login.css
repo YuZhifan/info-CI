@@ -1,0 +1,46 @@
+/*login.css*/
+*{
+	padding:0;
+	margin:0;
+}
+.index-logo{
+	width:40px;
+	height:auto;
+	margin-bottom:-6px;
+}
+
+.register-msg{
+	position: absolute;
+	display: none;
+	background-color: white;
+	border-radius: 3px;
+	border:1px solid #aaa;
+	border-width:1px;
+	line-height: 2em;
+	padding:0 1em;
+	margin-right:2em;
+	font-family: "Microsoft YaHei";
+	color:#333;
+	bottom:90px;
+	right:160px;
+
+}
+
+.register-msg:after,.register-msg:before{
+	content:"";
+	position: absolute;
+	border-width:10px;
+	border-style: solid;	
+	top:5px;
+}
+
+
+.register-msg:after{
+	right:-20px;
+	border-color:transparent transparent transparent #fff;
+}
+
+.register-msg:before{
+	right:-21px;
+	border-color:transparent transparent transparent #999;
+}

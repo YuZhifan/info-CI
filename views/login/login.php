@@ -11,11 +11,17 @@
         <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/login.css"?> />
         <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/style.css"?> />
 		<link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/animate-custom.css"?> />
+        <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
     </head>
     <body>
         <div class="container">
             <header>
-                <h1>欢迎  <span>信息论与编码</span></h1>
+                <h1>
+                    <a href=<?=base_url()."index.php"?>>
+                        <img class="index-logo" src=<?=base_url().'views/index/img/logo-info.png'?> alt="index-logo">
+                    </a>
+                    欢迎  
+                    <span>信息论与编码</span></h1>
 				<nav class="codrops-demos">
 					<span> 广东省研究生示范课程</span>
 				</nav>
@@ -55,7 +61,7 @@
                                 <h1> 注 册 </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">用户名</label>
-                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="Mr.King" />
+                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="Mr.Felix" />
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">密码 </label>
@@ -67,10 +73,10 @@
                                 </p>
 								<p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > 邮箱</label>
-                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="Mr.King@mail.com"/> 
+                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="Mr.Felix@mail.com"/> 
                                 </p>
                                 <p class="signin button"> 
-									<input type="submit" value="注 册"/> 
+									<span class="register-msg">1</span><input type="submit" value="注 册"/> 
 								</p>
                                 <p class="change_link">  
 									已经有帐号？
@@ -83,5 +89,6 @@
                 </div>  
             </section>
         </div>
+    <script src=<?=base_url().'views/Login/login.js'?>></script>
     </body>
 </html>
