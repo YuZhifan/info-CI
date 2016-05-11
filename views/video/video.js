@@ -3,41 +3,15 @@
  */
 
 $(document).ready(function(){
-    $(".nav-video").addClass("nav-video");
-});
-
- // 载入评论
-$(document).ready(function(){
-    $.getJSON("http://localhost/info-CodeIgniter/index.php/video/comment",'', 
-        function(data){
-            var list = $("<ul class='comment-list'></ul>");
-            $.each(data, function(i,item){
-                list.append(
-'<li class="comment-row">'+
-    '<img src="'+INFO.base_url+item.comment_src+'">'+
-    '<p class="comment-row-title">'+
-        '<strong>'+item.user_nicename+'</strong>'+
-        '<span>'+item.comment_time+'</span>'+
-    '</p>'+
-    '<p>'+item.comment+'</p>'+
-'</li>'
-                );
-
-            $(".comment-title").after(list);
-
-            });
-        });
+    $(".nav-video").addClass("nav-current");
 });
 
 
-//分页跳转
 $(document).ready(function(){
-    function jump(current,newPage){
-        current.removeClass("page-current");
-        newPage.addClass("page-current");
-        console.log("跳转到第 " + newPage.attr("name").replace(/[^0-9]/ig,"") + " 页");
-    }
-    var Count = 5;
+     // 载入评论
+    loadComment();
+
+    // 绑定跳转事件
     $(".page a").click(function(){
         var current = $(".page-current");
         var newPage = $(this);
@@ -57,13 +31,11 @@ $(document).ready(function(){
                 jump(current,newPage);
                 break;
         }
-
     });
-});
 
 
 // 评论验证
-$(document).ready(function(){
+
     // 输入框获得焦点，验证登录状态
     $(".comment textarea").focusin(function(){
         var loginStatus = checkLogin();
@@ -95,6 +67,16 @@ $(document).ready(function(){
                 msg.show(100,"linear");
                 return false;
             }
+
+            $.post({
+                url:"http://localhost/info-CI/index.php/video/addComment",
+                data:$("#video-comment-form").serialize(),
+                success:function(){
+                    $(".comment-list").html("");
+                    loadComment();
+                }
+            });
+            return false;
         }  
     });
 
@@ -126,6 +108,7 @@ $(document).ready(function(){
             },150);    
         }
 
+    //已登录返回YES，否则返回NO 
     function checkLogin(){
         $.get({
                 type:"GET",
@@ -136,6 +119,36 @@ $(document).ready(function(){
                 dataType:"html"
             });
         return $("#loginBar").data("status");
+    }
+
+    // 加载评论列表
+    function loadComment(){
+        $.getJSON({
+            url:"http://localhost/info-CodeIgniter/index.php/video/comment",
+            success:function(data){
+                var list = $("<ul class='comment-list'></ul>");
+                $.each(data, function(i,item){
+                    list.append(
+                    '<li class="comment-row">'+
+                    '<img src="'+INFO.base_url+item.comment_src+'">'+
+                    '<p class="comment-row-title">'+
+                    '<strong>'+item.user_nicename+'</strong>'+
+                    '<span>'+item.comment_time+'</span>'+
+                    '</p>'+
+                    '<p>'+item.comment+'</p>'+
+                    '</li>'
+                    );
+                $(".comment-title").after(list);
+                })
+            }
+        });
+    }
+
+    //分页跳转
+    function jump(current,newPage){
+        current.removeClass("page-current");
+        newPage.addClass("page-current");
+        console.log("跳转到第 " + newPage.attr("name").replace(/[^0-9]/ig,"") + " 页");
     }
 });
 

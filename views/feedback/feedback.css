@@ -100,6 +100,9 @@ a{text-decoration: none;}
 .question li textarea{
     height:6em;
     width:100%;
+    font-size: 1.2em;
+    line-height: 18px;
+    padding:5px;
 }
 
 
@@ -121,8 +124,10 @@ a{text-decoration: none;}
 }
 
 .question > input[type="submit"]:hover{
-    box-shadow: 0 0 2px brown;
-    font-size:1.4em;
+    box-shadow: 0 0 10px orange;
+    border-radius: 8px;
+
+    /*font-size:1.4em;*/
 }
 
 

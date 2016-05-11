@@ -60,7 +60,7 @@
 <div class="comment">
     <h1>评论</h1>
     <p class="subTitle">comment</p>
-    <form action="video/addComment" method="post">
+    <form action="video/addComment" method="post" id="video-comment-form">
         <textarea rows="4" cols="100" id="comment-submit" name="comment" ></textarea>
         <span class="comment-msg"></span>
         <input type="submit" value="提交评论" />
