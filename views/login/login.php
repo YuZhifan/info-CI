@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>信息论-登录</title>
+        <title>欢迎-信息论与编码</title>
         <!-- <link rel="shortcut icon" href="../favicon.ico">  -->
         <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/demo.css"?> />
         <link rel="stylesheet" type="text/css" href=<?=base_url()."views/login/login.css"?> />
@@ -46,7 +46,8 @@
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">自动登录</label>
 								</p>
-                                <p class="login button"> 
+                                <p class="login button">
+                                    <span class="login-msg"></span> 
                                     <input type="submit" value="登 录" /> 
 								</p>
                                 <p class="change_link">
@@ -76,7 +77,7 @@
                                     <input id="emailsignup" name="email" required="required" type="email" placeholder="Mr.Felix@mail.com"/> 
                                 </p>
                                 <p class="signin button"> 
-									<span class="register-msg">1</span><input type="submit" value="注 册"/> 
+									<span class="register-msg"></span><input type="submit" value="注 册"/> 
 								</p>
                                 <p class="change_link">  
 									已经有帐号？

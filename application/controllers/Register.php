@@ -55,15 +55,18 @@ class Register extends CI_Controller {
 	}
 	
 	public function username_check($str)
-    {		
+    {	
+    	$this->load->model(DB_model);	
 		$query=$this->DB_model->select("select id from tb_users where user_login = '".$str."'");//可用于检测用户名是否已被注册
         if ($query->result()!=null)//已被注册则不为空
         {
 //            $this->form_validation->set_message('username_check', 'The {field} has existed!');
+            echo "YES";
             return FALSE;
         }
         else
         {
+            echo "NO";
             return TRUE;
         }
     }

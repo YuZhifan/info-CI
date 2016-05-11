@@ -9,7 +9,7 @@
 	margin-bottom:-6px;
 }
 
-.register-msg{
+.register-msg,.login-msg{
 	position: absolute;
 	display: none;
 	background-color: white;
@@ -26,7 +26,10 @@
 
 }
 
-.register-msg:after,.register-msg:before{
+.register-msg:after,
+.register-msg:before,
+.login-msg:after,
+.login-msg:before{
 	content:"";
 	position: absolute;
 	border-width:10px;
@@ -35,12 +38,12 @@
 }
 
 
-.register-msg:after{
+.register-msg:after,.login-msg:after{
 	right:-20px;
 	border-color:transparent transparent transparent #fff;
 }
 
-.register-msg:before{
+.register-msg:before,.login-msg:before{
 	right:-21px;
 	border-color:transparent transparent transparent #999;
 }

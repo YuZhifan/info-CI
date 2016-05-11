@@ -9,7 +9,16 @@ $(document).ready(function(){
 
 		// 输入用户名，验证用户名已是否存在
 		$("#usernamesignup").focusout(function(){
-			
+			$.get({
+				type:"GET",
+				url:"http://localhost/info-CI/index.php/register/username_check/"+$("#usernamesignup").val(),
+				success:function(exsit){
+					if(exsit === "YES"){
+						showMsg("该用户名已存在");
+					}
+				},
+				dataType:"html"
+			})
 		});
 
 		//提交注册请求
@@ -17,42 +26,57 @@ $(document).ready(function(){
 			var name = $("#usernamesignup").val();
 			var password = $("#register form input[name='password']").val();
 			var passconf = $("#register form input[name='passconf']").val();
+			var regRegexp = /[^A-Za-z0-9]/g;
 			// 未填写完全
 			if(!(name && password && passconf)){
-				showMsg("请填写必填项");
-				return false;
-			}
-
-			//两次密码不同 
-			if(passconf !== password){
-				showMsg("两次密码不同");
+				showMsg("register","请填写全部内容");
 				return false;
 			}
 
 			// 密码少于6位
-			if(password.length < 6){
-				showMsg("请输入至少6位的密码");
+			else if(password.length < 6){
+				showMsg("register","请输入至少6位的密码");
+				return false;
+			}
+
+			//两次密码不同 
+			else if(passconf !== password){
+				showMsg("register","两次密码不同");
 				return false;
 			}
 
 			// 密码含有非法字符
-
-		return false;	
+			else if(regRegexp.exec(passconf)){
+				showMsg("register","密码中只能含有数字和字母");
+				return false;
+			}
+			else {
+				return true;
+			}
 		});
 	}else{//登录
+		hideMsg("login")
+		$("#login form").submit(function(){
+			var password = $("#login form input[name='password']");
+			var logRegexp = /[^A-Za-z0-9]/g;
 
+			if(logRegexp.exec(password)){
+				showMsg("login","密码错误");
+				return false;
+			}
+		});
 	}
 
 	function hideMsg(act){
 		$("#" + act +" input[type!='submit']").focusin(function(){
-			$(".register-msg").html("");
-			$(".register-msg").hide(100);
+			$("."+ act +"-msg").html("");
+			$("."+ act +"-msg").hide(100);
 		});
 	}
 
-	function showMsg(content){
-		$(".register-msg").html(content);
-		$(".register-msg").show(100);
+	function showMsg(act,content){
+		$("."+ act +"-msg").html(content);
+		$("."+ act +"-msg").show(100);
 	}
 });
 
