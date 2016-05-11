@@ -8,7 +8,6 @@ $(document).ready(function(){
 
  // 载入评论
 $(document).ready(function(){
-    console.log("item");
     $.getJSON("http://localhost/info-CodeIgniter/index.php/video/comment",'', 
         function(data){
             var list = $("<ul class='comment-list'></ul>");
@@ -67,31 +66,32 @@ $(document).ready(function(){
 $(document).ready(function(){
     // 输入框获得焦点，验证登录状态
     $(".comment textarea").focusin(function(){
-        var flag = "no";
+        var loginStatus = checkLogin();
+        console.log(loginStatus);
         var msg = $(".comment .comment-msg");
-        msg.html("");
-        // $.get("url",,function(){
-        //     flag = "从数据库获得的值";
-        // },"html");
-        if(flag === "no"){
-            msgAnimate();
-            msg.html("请先登录...");
+        if(loginStatus === "NO"){
+            msg.html("请先登录");
+            return false;
         }
     });
 
     // 提交表单验证评论长度
-    $(".comment form").submit(function(){   
-
-        var flag = "yes";
+    $(".comment form").submit(function(){
+        var loginStatus = checkLogin();
         var msg = $(".comment .comment-msg");
-        if(flag === "no"){
-            msg.html("请先登录...");
+        if(loginStatus === "NO"){
+            msg.html("请先登录");
             return false;
         }else{
-            var content = msg.val();
+            var content = $("#comment-submit").val();
             if(content.length < 15){
-                
+                console.log(content);
                 msg.html("评论不少于15字...");
+                msg.show(100,"linear");
+                return false;
+            }
+            else if(content.length > 150){
+                msg.html("评论不能超出150字...");
                 msg.show(100,"linear");
                 return false;
             }
@@ -101,7 +101,6 @@ $(document).ready(function(){
     //输入框闪烁效果 
     function msgAnimate(){
         var textarea =$(".comment form textarea");
-            console.log("animate");
             textarea.animate({//显示
                 "outline-width": "1px",
             },100);
@@ -124,13 +123,19 @@ $(document).ready(function(){
 
                 },200);
 
-            },150);
+            },150);    
+        }
 
-
-            
-
-            
-            
-        } 
+    function checkLogin(){
+        $.get({
+                type:"GET",
+                url:"http://localhost/info-CI/index.php/video/checkLogin",
+                success:function(log){
+                    $("#loginBar").data("status",log);
+                },
+                dataType:"html"
+            });
+        return $("#loginBar").data("status");
+    }
 });
 

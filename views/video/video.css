@@ -252,7 +252,7 @@
     .comment-box, .comment textarea{
         width:90%;
     }
-    .comment input{
+    .comment form input{
         margin-right:5%;
     }
 

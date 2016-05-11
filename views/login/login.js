@@ -18,7 +18,7 @@ $(document).ready(function(){
 					}
 				},
 				dataType:"html"
-			})
+			});
 		});
 
 		//提交注册请求
@@ -57,13 +57,17 @@ $(document).ready(function(){
 	}else{//登录
 		hideMsg("login")
 		$("#login form").submit(function(){
-			var password = $("#login form input[name='password']");
+			var password = $("#login form input[name='password']").val();
 			var logRegexp = /[^A-Za-z0-9]/g;
+			console.log(password);
 
 			if(logRegexp.exec(password)){
 				showMsg("login","密码错误");
 				return false;
+			}else{
+				return true;
 			}
+
 		});
 	}
 

@@ -62,6 +62,7 @@
     <p class="subTitle">comment</p>
     <form action="video/addComment" method="post">
         <textarea rows="4" cols="100" id="comment-submit" name="comment" ></textarea>
+        <span class="comment-msg"></span>
         <input type="submit" value="提交评论" />
     </form>
     <div class="comment-box">
