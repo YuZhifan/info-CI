@@ -16,7 +16,7 @@
 
 
 var INFO ={
-    base_url:"http://localhost/info-CodeIgniter/",
+    base_url:"http://localhost/info-CI/",
 };
 
 

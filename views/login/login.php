@@ -91,5 +91,6 @@
             </section>
         </div>
     <script src=<?=base_url().'views/Login/login.js'?>></script>
+    <script src=<?=base_url().'views/common/common.js'?>></script>
     </body>
 </html>

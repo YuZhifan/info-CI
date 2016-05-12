@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$("#usernamesignup").focusout(function(){
 			$.get({
 				type:"GET",
-				url:"http://localhost/info-CI/index.php/register/username_check/"+$("#usernamesignup").val(),
+				url:INFO.base_url + "index.php/register/username_check/"+$("#usernamesignup").val(),
 				success:function(exsit){
 					if(exsit === "YES"){
 						showMsg("该用户名已存在");

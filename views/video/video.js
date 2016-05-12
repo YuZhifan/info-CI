@@ -41,6 +41,7 @@ $(document).ready(function(){
         var loginStatus = checkLogin();
         console.log(loginStatus);
         var msg = $(".comment .comment-msg");
+        msg.html("");
         if(loginStatus === "NO"){
             msg.html("请先登录");
             return false;
@@ -69,7 +70,7 @@ $(document).ready(function(){
             }
 
             $.post({
-                url:"http://localhost/info-CI/index.php/video/addComment",
+                url:INFO.base_url + "index.php/video/addComment",
                 data:$("#video-comment-form").serialize(),
                 success:function(){
                     $(".comment-list").html("");
@@ -112,7 +113,7 @@ $(document).ready(function(){
     function checkLogin(){
         $.get({
                 type:"GET",
-                url:"http://localhost/info-CI/index.php/video/checkLogin",
+                url:INFO.base_url + "index.php/video/checkLogin",
                 success:function(log){
                     $("#loginBar").data("status",log);
                 },
@@ -124,7 +125,8 @@ $(document).ready(function(){
     // 加载评论列表
     function loadComment(){
         $.getJSON({
-            url:"http://localhost/info-CodeIgniter/index.php/video/comment",
+            type:"GET",
+            url:INFO.base_url + "index.php/video/comment",
             success:function(data){
                 var list = $("<ul class='comment-list'></ul>");
                 $.each(data, function(i,item){
@@ -140,7 +142,8 @@ $(document).ready(function(){
                     );
                 $(".comment-title").after(list);
                 })
-            }
+            },
+            dataType:"json"
         });
     }
 
