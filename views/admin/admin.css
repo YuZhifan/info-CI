@@ -1,0 +1,156 @@
+@import url('../common/footer.css');
+*{
+	padding:0;
+	margin:0;
+	border:0;
+}
+body{
+	width:1270px;
+	margin:0 auto 0 auto;
+}
+a{text-decoration:none;}
+#head_span{
+	display:block;
+	height:15px;
+	width:1270px;
+	background-color:#D2D0D1;
+}
+#head_pic{
+	margin-bottom:10px;
+}
+#main{
+	height:500px;
+	width:1270px;	
+}
+#main_left{
+	float:left;
+	width:234px;
+	height:500px;
+	padding:0 6px 0 0;
+}
+#left_top{
+	height:80px;
+	background-color:#E7E8EA;
+	font-family: "SimHei","Helvetica","Arial",sans-serif;
+}
+			
+#left_bottom{
+	height:420px;
+	background-color:#D9D5D6;
+}
+
+/*管理项目选项*/
+#select li{
+	width:100%;
+	list-style-type:none;
+	padding-top:10px
+}
+
+#select li a{
+	display:block;
+	font-size:18px;
+	letter-spacing:.6em;
+	width:100%;
+	padding:10px 0 10px 0;
+	font-family: "Microsoft YaHei","Helvetica","Arial",sans-serif;
+	
+}
+
+#select li a:link{/* 未访问的链接 */
+    color:#445;
+
+}
+
+#select li a:visited{/* 已访问的链接 */
+    color: #345;
+    background-color: #eb6;
+}
+
+#select li a:hover{/* 当有鼠标悬停在链接上 */
+    color: #667;
+    background-color: #eb6;
+}
+
+
+
+
+
+
+
+
+
+
+#main_right{
+	width:1030;
+	height:500px;
+	float:right;
+}
+#right_top{
+	height:40px;
+	background-color:#D9D5D6;
+}
+
+#right_top span{
+	padding-top:.6em;
+	float:right;
+}
+#right_top span a{
+	color:#445;
+}
+
+#right_bottom{
+	height:460px;
+	background-color:#E7E8EA;
+}
+			
+iframe{
+	width:950px;
+	height:390px;
+	margin:20px 40px 0 40px;
+	background-color:white;
+}
+			
+			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+#foot1{
+	width: 100%;
+	height: 70px;
+	color: white;
+	background-color: #88a0ac;
+	float: left;
+	text-align: center;
+	margin-top:6px;
+}
+#foot1 p{
+	margin-top: 10px;
+}
+#foot1 a{
+	color: white;
+}
+#foot1 a:hover{
+	color: blue;
+	font-size: 20px;
+	font-weight: bold;
+}
+#foot2{
+	width: 100%;
+	height: 30px;
+	color: white;
+	float: left;
+	text-align: center;
+	background-color: #1c1b29;
+}
+#foot2 p{
+    margin-top: 8px;
+}
