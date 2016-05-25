@@ -34,12 +34,8 @@ class Login extends CI_Controller {
         }
         else
         {
-			
-			$this->load->helper('date');
-			$datestring = '%Y-%m-%d	%H:%i:%s'; //2016-04-30	13:27:23
-			date_default_timezone_set (PRC);//时间默认 是 格林尼治时间
-			$time = time();
-			$_SESSION[last_login_time] = mdate($datestring, $time);
+			$this->load->model(Time_model);
+			$_SESSION[last_login_time] = $this->Time_model->getdata();
 			$_SESSION[username]=set_value(username);
 			header('Location:welcome/../');
 			// $this->DB_model->update("");
