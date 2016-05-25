@@ -1,0 +1,1 @@
+每次修改数据库结构需备份  格式为info-YYYY-MM-DD-hh-mm.sql
