@@ -98,7 +98,7 @@ class Video extends CI_Controller {
 	// 检测登录状态
 	public function checkLogin(){
 		session_start();
-		if(isset($_SESSION[username])){
+		if($_SESSION[username]&&$_SESSION[id]){
 			echo "YES";
 		}
 		else{
