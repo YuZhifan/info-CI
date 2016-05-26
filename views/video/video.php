@@ -19,9 +19,9 @@
 <div class="video-wrap">
     <div class="video">
         <div class="video-box">
-            <video src=<?=base_url().'views/video/video/test.mp4'?> controls="controls">
-                您的浏览器不支持 video 标签，请更新浏览器。
-            </video>
+<!--         <video src=<?=base_url().'views/video/video/test.mp4'?> controls="controls">   -->
+<!-- 		     </video>	 -->
+		     <iframe name="show" src=<?=base_url().'index.php/video/videoframe/'.'test3.mp4' ?>></iframe>
         </div>
         <div class="video-list">
             <h1>相关视频</h1>
@@ -29,7 +29,7 @@
             <ul>
                 <li>
                     <div class="list-item">
-                        <a href="#">
+                        <a href=<?=base_url().'index.php/video/videoframe/'.'test1.mp4' ?> target='show'>
                             <img src=<?=base_url().'views/common/img/list-item1.jpg'?>>
                             <span>视频1</span>
                         </a>
@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <div class="list-item">
-                        <a href="#">
+                        <a href=<?=base_url().'index.php/video/videoframe/'.'test2.mp4' ?> target='show'>
                             <img src=<?=base_url().'views/common/img/list-item2.jpg'?>>
                             <span>视频2</span>
                         </a>
@@ -45,7 +45,7 @@
                 </li>
                 <li>
                     <div class="list-item">
-                        <a href="#">
+                        <a href=<?=base_url().'index.php/video/videoframe/'.'test3.mp4' ?> target='show'>
                             <img src=<?=base_url().'views/common/img/list-item3.jpg'?>>
                             <span>视频3</span>
                         </a>
