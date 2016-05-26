@@ -26,24 +26,25 @@
 <div class="resource-wrap">
     <div class="box-video resource-box">
         <ul class="resource-list" >
-            <li>
-                <a href="#">
-                    <img src=<?=base_url().'views/common/img/list-item1.jpg'?> alt="视频1">
-                    <span>视频1</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src=<?=base_url().'views/common/img/list-item2.jpg'?> alt="视频2">
-                    <span>视频2</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src=<?=base_url().'views/common/img/list-item3.jpg'?> alt="视频3">
-                    <span>视频3</span>
-                </a>
-            </li>
+<!--             <li> -->
+<!--                  <a href=<?=base_url().'views/video/video/test1.mp4'?> download="video1">-->
+<!--                      <img src=<?=base_url().'views/common/img/list-item1.jpg'?> >-->
+<!--                     <span>视频1</span> -->
+<!--                 </a> -->
+<!--             </li> -->
+<!--             <li> -->
+ <!--                 <a href=<?=base_url().'views/video/video/test2.mp4'?> download="video2">-->
+ <!--                     <img src=<?=base_url().'views/common/img/list-item2.jpg'?> alt="视频2">-->
+<!--                     <span>视频2</span> -->
+<!--                 </a> -->
+<!--             </li> -->
+<!--             <li> -->
+<!--                <a href=<?=base_url().'views/video/video/test3.mp4'?> download="video3">-->
+<!--                    <img src=<?=base_url().'views/common/img/list-item3.jpg'?> alt="视频3">-->
+<!--                     <span>视频3</span> -->
+<!--                 </a> -->
+<!--             </li> -->
+				<?=print_r($list);?>
         </ul>
     </div>
     <div class="box-ppt resource-box" >
