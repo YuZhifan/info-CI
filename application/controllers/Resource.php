@@ -24,6 +24,22 @@ class Resource extends CI_Controller {
 		$this->load->model(LoginBar_model);
 		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
 		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$this->load->model(DB_model);
+		$query=$this->DB_model->select('select * from tb_video;');
+		$this->load->model(Resource_model);
+		foreach($query->result_array() as $row)
+		{
+			$list[$row[id]]=$this->Resource_model->videodownload($row);
+		}
+		$data['list'] = $list;
 		$this->load->view('resource\resource',$data);
+	}
+	
+	//测试用方法
+	public function videodownload()
+	{
+		$this->load->model(Resource_model);
+		$this->Resource_model->videodownload();
+	
 	}
 }

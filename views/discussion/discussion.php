@@ -27,11 +27,11 @@
 <div class="discussion">
     <h1>交流讨论</h1>
     <p class="subTitle">discussion</p>
-    <form action="#" class="discussion-form">
-        <textarea rows="4" cols="100" id="discussion-submit" ></textarea>
-        <label><input name="discussion-type" type="radio" value="review" />心得 </label>
-        <label><input name="discussion-type" type="radio" value="question" />疑问 </label>
-        <label><input name="discussion-type" type="radio" value="comment" />吐槽 </label>
+    <form action="discussion/addComment" class="discussion-form" method="post">
+        <textarea name="comment" rows="4" cols="100" id="discussion-submit"></textarea>
+        <label><input name="discussion_type" type="radio" value="1" />心得 </label>
+        <label><input name="discussion_type" type="radio" value="2" />疑问 </label>
+        <label><input name="discussion_type" type="radio" value="3" />吐槽 </label>
         <span class="msg"></span>
         <input type="submit" value="留言讨论" />
     </form>

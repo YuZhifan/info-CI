@@ -12,34 +12,35 @@ if(!isset($_SESSION['name'])||$_SESSION[admin]!=1){
 <html>
 	<head>
 		<title>后台管理</title>
-		<link href="admin.css" rel="stylesheet" type="text/css" >
+		<link href=<?=base_url().'views/admin/admin.css'?> rel="stylesheet" type="text/css" >
 	</head>
 	<body>
 		<span id="head_span"></span>
-		<img id="head_pic" src="./img/bg_manage.png" width="1270px" height="160px">
+		<img id="head_pic" src=<?=base_url().'views/admin/img/bg_manage.png'?> width="1270px" height="160px">
 		<div id="main">
 			<div id="main_left">
 				<div id="left_top">
-				<img src="./img/manage_logo.png" height="70px" style="float:left;padding-left:.5em;">
+				<img src=<?=base_url().'views/admin/img/manage_logo.png'?> height="70px" style="float:left;padding-left:.5em;">
 				<h2 style="padding:.5em 0 .1em .2em;">管理项目</h2>
 				<p style="color:#7D2D2E">GUANLIXIANGMU</p>
 				</div>
 				<div id="left_bottom">
 				<ul id="select">
+					<li><a href=<?=base_url().'index.php/userinfo'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;个人信息</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;录像管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;自测管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;下载管理</a></li>
-					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;查看数据</a></li>
+					<li><a href=<?=base_url().'index.php/showdata'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;查看数据</a></li>
 				</ul>
 				</div>
 			</div>
 			<div id="main_right">
 				<div id="right_top">
-				<span>&nbsp;<a href="#">注销</a>&nbsp;&nbsp;&nbsp;</span>
-				<span><a href="#">返回主页</a></span>
+<!-- 				<span>&nbsp;<a href="#">注销</a>&nbsp;&nbsp;&nbsp;</span> -->
+				<span><a href=<?=base_url().'index.php'?>>返回主页&nbsp;&nbsp;</a></span>
 				</div>
 				<div id="right_bottom">
-				
+				<iframe name="show" ></iframe>
 				</div>
 			</div>
 		</div>

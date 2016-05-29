@@ -33,7 +33,7 @@
 <!--添加导航栏-->
 <include file="./nav"/>
 
-<form action="" class="question">
+<form action="feedback/addFeedback" class="question" method="post">
     <h1>课程评价问卷</h1>
     <ul>
         <li>

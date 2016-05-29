@@ -24,6 +24,6 @@ class Exercise extends CI_Controller {
 		$this->load->model(LoginBar_model);
 		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
 		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
-		$this->load->view('exercise/exercise',$data);
+		$this->load->view('exercise\exercise',$data);
 	}
 }

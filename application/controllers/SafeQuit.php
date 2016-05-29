@@ -24,6 +24,6 @@ class SafeQuit extends CI_Controller {
 		$this->load->view('common\safeQuit');
 		session_unset();
 		session_destroy();
-		header('Location:welcome/../');
+		header('Location:../index.php');
 	}
 }

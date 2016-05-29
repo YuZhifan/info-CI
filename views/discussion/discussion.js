@@ -42,7 +42,7 @@ $(document).ready(function(){
 //提交表单
 $(document).ready(function(){
     $(".discussion-form").submit(function(){
-        var discussionType = $(".discussion-form label  input[name='discussion-type']:checked").val();
+        var discussionType = $(".discussion-form label  input[name='discussion_type']:checked").val();
         
         if(!discussionType){//必须选择类型
             $(".discussion-form .msg").html("请选择留言类型...");

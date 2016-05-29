@@ -132,7 +132,7 @@ $(document).ready(function(){
                 $.each(data, function(i,item){
                     list.append(
                     '<li class="comment-row">'+
-                    '<img src="'+INFO.base_url+item.comment_src+'">'+
+                    '<img src="'+INFO.base_url+item.avatar+'">'+
                     '<p class="comment-row-title">'+
                     '<strong>'+item.user_nicename+'</strong>'+
                     '<span>'+item.comment_time+'</span>'+
