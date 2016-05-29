@@ -28,7 +28,7 @@ class Welcome extends CI_Controller {
 		
 		
 		
-		if($_SESSION[username])
+		if($_SESSION[username]&&$_SESSION[id])
 		{
 			//登录时间和IP记录
 		$this->load->helper('date');
@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		$_SESSION[last_login_time] = mdate($datestring, $time);
 		$this->load->model(DB_model);
 		$_SESSION[last_login_ip]=$this->input->ip_address();
-		$this->DB_model->update("UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';");
+// 		$this->DB_model->update("UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';");
 		}else{
 			// echo fasle;
 		}

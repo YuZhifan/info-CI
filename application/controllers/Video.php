@@ -83,7 +83,7 @@ class Video extends CI_Controller {
 			if($_SESSION[username]&&$_SESSION[id])
 			{
 				$this->load->model(Video_model);
-				$comment=set_value(comment);
+				$comment=$this->input->post(comment);
 				$this->Video_model->add($comment);	
 				
 				

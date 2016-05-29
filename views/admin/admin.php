@@ -26,6 +26,7 @@ if(!isset($_SESSION['name'])||$_SESSION[admin]!=1){
 				</div>
 				<div id="left_bottom">
 				<ul id="select">
+					<li><a href=<?=base_url().'index.php/userinfo'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;个人信息</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;录像管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;自测管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;下载管理</a></li>
