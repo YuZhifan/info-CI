@@ -78,6 +78,18 @@
     border:1px solid #999;
 }
 
+.list-item{
+    background-color: #DDD;
+}
+
+.list-item button{
+    background-color: none;
+    border:none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
 .list-item img{
     width:100px;
     height:67px;

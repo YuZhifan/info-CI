@@ -19,9 +19,7 @@
 <div class="video-wrap">
     <div class="video">
         <div class="video-box">
-<!--         <video src=<?=base_url().'views/video/video/test.mp4'?> controls="controls">   -->
-<!-- 		     </video>	 -->
-		     <iframe name="show" src=<?=base_url().'index.php/video/videoframe/'.'test3.mp4' ?>></iframe>
+            <video src=<?=base_url().'views/video/video/test3.mp4' ?> controls="controls" id="video"></video>	
         </div>
         <div class="video-list">
             <h1>相关视频</h1>
@@ -29,26 +27,26 @@
             <ul>
                 <li>
                     <div class="list-item">
-                        <a href=<?=base_url().'index.php/video/videoframe/'.'test1.mp4' ?> target='show'>
+                        <button data-src=<?=base_url().'views/video/video/test1.mp4' ?>>
                             <img src=<?=base_url().'views/common/img/list-item1.jpg'?>>
                             <span>视频1</span>
-                        </a>
+                        </button>
                     </div>
                 </li>
                 <li>
                     <div class="list-item">
-                        <a href=<?=base_url().'index.php/video/videoframe/'.'test2.mp4' ?> target='show'>
+                        <button data-src=<?=base_url().'views/video/video/test2.mp4' ?>>
                             <img src=<?=base_url().'views/common/img/list-item2.jpg'?>>
                             <span>视频2</span>
-                        </a>
+                        </button>
                     </div>
                 </li>
                 <li>
                     <div class="list-item">
-                        <a href=<?=base_url().'index.php/video/videoframe/'.'test3.mp4' ?> target='show'>
+                        <button data-src=<?=base_url().'views/video/video/test3.mp4' ?>>
                             <img src=<?=base_url().'views/common/img/list-item3.jpg'?>>
                             <span>视频3</span>
-                        </a>
+                        </button>
                     </div>
                 </li>
                 <b class="clear-float"></b>
