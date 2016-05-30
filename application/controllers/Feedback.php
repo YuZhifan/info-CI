@@ -54,15 +54,15 @@ class Feedback extends CI_Controller {
 			{
 				$this->load->model(Feedback_model);
 				$array = array(
-						"que1" => set_value(que1),
-						"que2" => set_value(que2),
-						"que3" => set_value(que3),
-						"que4" => set_value(que4),
-						"que5" => set_value(que5),
-						"que6" => set_value(que6),
-						"que7" => set_value(que7),
-						"que8" => set_value(que8),
-						"suggestion" => set_value(suggestion),
+						"que1" => $this->input->post(que1),
+						"que2" => $this->input->post(que2),
+						"que3" => $this->input->post(que3),
+						"que4" => $this->input->post(que4),
+						"que5" => $this->input->post(que5),
+						"que6" => $this->input->post(que6),
+						"que7" => $this->input->post(que7),
+						"que8" => $this->input->post(que8),
+						"suggestion" => $this->input->post(suggestion),
 				);
 				$this->Feedback_model->add($array);
 	
