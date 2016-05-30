@@ -153,5 +153,10 @@ $(document).ready(function(){
         newPage.addClass("page-current");
         console.log("跳转到第 " + newPage.attr("name").replace(/[^0-9]/ig,"") + " 页");
     }
+
+//视频点播
+    $(".list-item button").on("click",function(){
+        $("#video").attr("src",$(this).data("src"));
+    });
 });
 
