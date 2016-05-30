@@ -93,12 +93,11 @@ a{text-decoration: none;}
     min-height:100px;
     margin:5em auto 0 auto;
     box-shadow: 0 0 5px #666;
-    text-align: center;
+    text-align: left;
 }
 
 .resource-wrap .resource-list{
     padding:2em 1em;
-    height:100%;
 }
 
 .tab-wrap .tab-choose{
@@ -119,7 +118,9 @@ a{text-decoration: none;}
 .resource-wrap .resource-list li{
     display: inline;
     display: inline-block;
-    margin:0 1em;
+    margin:1em 0em;
+    width:25%;
+    text-align: center;
 }
 
 .resource-wrap .resource-list li img{

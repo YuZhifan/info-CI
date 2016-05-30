@@ -2,7 +2,7 @@
 <html>
 <head lang="zh-CN">
     <meta charset="UTF-8">
-    <title>信息论-讨论交流</title>
+    <title>信息论-资源下载</title>
     <link href=<?=base_url().'views/resource/resource.css'?> rel="stylesheet" type="text/css">
     <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
         <script src=<?=base_url().'views/common/common.js'?>></script>
@@ -44,7 +44,11 @@
 <!--                     <span>视频3</span> -->
 <!--                 </a> -->
 <!--             </li> -->
-				<?=print_r($list);?>
+				<?php 
+                    foreach ($list as $value) {
+                        print_r($value);
+                    }
+                ?>
         </ul>
     </div>
     <div class="box-ppt resource-box" >
