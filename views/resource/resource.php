@@ -46,19 +46,35 @@
 <!--             </li> -->
 				<?php 
                     foreach ($list as $value) {
-                        print_r($value);
+                    	if($value['type']==1)
+                        	print_r($value['content']);
                     }
                 ?>
         </ul>
     </div>
     <div class="box-ppt resource-box" >
-        <strong>当前类别暂无资源</strong>
+        <?php 
+                    foreach ($list as $value) {
+                    	if($value['type']==2)
+                        	print_r($value['content']);
+                    }
+                ?>
     </div>
     <div class="box-paper resource-box" >
-        <strong>当前类别暂无资源</strong>
+                <?php 
+                    foreach ($list as $value) {
+                    	if($value['type']==3)
+                        	print_r($value['content']);
+                    }
+                ?>
     </div>
     <div class="box-ebook resource-box" >
-        <strong>当前类别暂无资源</strong>
+                <?php 
+                    foreach ($list as $value) {
+                    	if($value['type']==4)
+                        	print_r($value['content']);
+                    }
+                ?>
     </div>
 </div>
 <!-- 页脚 -->

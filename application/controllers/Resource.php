@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Resource extends CI_Controller {
 
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -25,11 +26,14 @@ class Resource extends CI_Controller {
 		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
 		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
 		$this->load->model(DB_model);
-		$query=$this->DB_model->select('select * from tb_video;');
+		$query=$this->DB_model->select('select * from tb_resource;');
 		$this->load->model(Resource_model);
 		foreach($query->result_array() as $row)
 		{
-			$list[$row[id]]=$this->Resource_model->videodownload($row);
+			$list[$row[id]]=array(
+					'content' => $this->Resource_model->videodownload($row),
+					'type' => $row['type'],
+			);
 		}
 		$data['list'] = $list;
 		$this->load->view('resource\resource',$data);

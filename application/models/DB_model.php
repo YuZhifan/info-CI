@@ -59,4 +59,28 @@ class DB_model extends CI_Model {
 		}
 		
 	}
+	
+	public function fenye(){
+		$this->load->library('pagination');
+// 		$this->load->model(DB_model);
+// 		$query = $this->DB_model->select('select count(comment) from tb_discussion');
+// 		$row=(array)$query->row();
+// 		$config['base_url'] = site_url('');
+	
+	
+// 		$config['base_url'] = 'http://localhost/index.php/discussion/fenye';
+// 		$config['total_rows'] = $row['count(comment)'];
+// 		$config['per_page'] = 'select * from tb_discussion';
+	
+// 		$this->pagination->initialize($config);
+	
+// 		echo $this->pagination->create_links();
+	
+		// 			var_dump($config);
+		// 		exit();
+		
+		echo PER_PAGE;
+// 		$this->load->helper('url');
+// 		echo base_url();
+	}
 }
