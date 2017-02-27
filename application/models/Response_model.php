@@ -12,12 +12,12 @@ class Response_model extends CI_Model {
 	public function success($array){
 		
 		$responseArray = array(
-				'Status' => 10000,
+				'status' => 10000,
 				'results' => $array,
 		);
-		echo '<pre>';
-		var_dump($responseArray);
-		exit();
+// 		echo '<pre>';
+		echo(json_encode($responseArray));
+// 		exit();
 	}
 
 

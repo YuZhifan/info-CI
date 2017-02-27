@@ -25,7 +25,7 @@ class Discussion_model extends CI_Model {
 			$this->db->where(array('comment_type' => $comment_type));
 		}
 		$query = $this->db->get();
-		$this->response_model->success($query->result());
+		$this->Response_model->success($query->result_array());
 	}
 	
 // 	public function getComment()//全部类型

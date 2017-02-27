@@ -42,17 +42,18 @@
             <input type="button" value="疑问" data-show="question"/>
             <input type="button" value="吐槽" data-show="comment"/>
         </div>
-<!--
+
         <ul class="discussion-list">
-            <li class="discussion-row">
-                <img src=<?=base_url().'views/common/img/list-item1.jpg'?>>
-                <p class="discussion-row-title">
-                    <strong>Felix</strong><span>2016-04-06 21:54:50</span>
-                </p>
-                <p>神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代</p>
-            </li>
+<!--             <li class="discussion-row"> -->
+<!--               <img src=<?=base_url().'views/common/img/list-item1.jpg'?>>  -->
+<!--                 <p class="discussion-row-title"> -->
+<!--                     <strong>Felix</strong><span>2016-04-06 21:54:50</span> -->
+<!--                 </p> -->
+<!--                 <p>神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代</p> -->
+<!--             </li> -->
         </ul>
--->
+
+
 <?php 
 
 ?>
