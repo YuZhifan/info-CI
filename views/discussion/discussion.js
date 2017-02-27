@@ -4,6 +4,7 @@
 
 $(document).ready(function(){
     $(".nav-discussion").addClass("nav-current");
+    getComment();
 });
 
 
@@ -71,33 +72,28 @@ $(document).ready(function(){
 
 //选择标签
 $(document).ready(function(){
-    $(".discussion-tag input").click(function(){
-//        clickSwitch($(".choose"),$(this),"choose");
-//        $(".discussion-list").html('' +
-//        		'<li class="discussion-row">' +
-//        		'<img src='+INFO.base_url+'/views/common/img/list-item1.jpg>' +
-//        		'<p class="discussion-row-title">' +
-//        				'<strong>Felix</strong><span>2016-04-06 21:54:50</span>'+
-//        		'</p>'+
-//        		'<p>神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代神明之胄动画全集这是一个图腾崇拜的时代</p>'+
-//        		'</li>');
-    
-//        $(".discussion-list").html(INFO.base_url+'/discussion/getComment');
-        $.get(INFO.base_url+"/discussion/getComment",function(data){
-        	console.log(data);
-//        	for(list in data){
-//	        	$(".discussion-list").html(
-//	            		'<li class="discussion-row">' +
-//	            		'<img src='+INFO.base_url+'/views/common/img/list-item1.jpg>' +
-//	            		'<p class="discussion-row-title">' +
-//	            				'<strong>Felix</strong><span>2016-04-06 21:54:50</span>'+
-//	            		'</p>'+
-//	            		'<p>'+data.status+'</p>'+
-//	            		'</li>'
-//	        			data
-//	          );	
-//        	}
-            
-        });
+    $(".discussion-tag").click(function(){
+        clickSwitch($(".choose"),$(this),"choose");
+        getComment();
+//        console.log($(".choose"));
     });
 });
+
+
+function getComment(comment_type=0){
+	$.get(INFO.base_url+"/discussion/getComment/"+comment_type,function(json){
+    	var data = JSON.parse(json);
+    	$(".discussion-list").empty();
+    	for(list in data.results){
+        	$(".discussion-list").append(
+            		'<li class="discussion-row">' +
+            		'<img src='+INFO.base_url+'/'+data.results[list].avatar+'>'+
+            		'<p class="discussion-row-title">' +
+            				'<strong>'+data.results[list].user_nicename+'</strong><span>'+data.results[list].comment_time+'</span>'+
+            		'</p>'+
+            		'<p>'+data.results[list].comment+'</p>'+
+            		'</li>'
+          );	
+    	}
+    });
+} 
