@@ -53,28 +53,34 @@
         </ul>
     </div>
     <div class="box-ppt resource-box" >
+    	<ul class="resource-list" >
         <?php 
                     foreach ($list as $value) {
                     	if($value['type']==2)
                         	print_r($value['content']);
                     }
                 ?>
+        </ul>
     </div>
     <div class="box-paper resource-box" >
+    	<ul class="resource-list" >
                 <?php 
                     foreach ($list as $value) {
                     	if($value['type']==3)
                         	print_r($value['content']);
                     }
                 ?>
+          </ul>
     </div>
     <div class="box-ebook resource-box" >
+    	<ul class="resource-list" >
                 <?php 
                     foreach ($list as $value) {
                     	if($value['type']==4)
                         	print_r($value['content']);
                     }
                 ?>
+         </ul>
     </div>
 </div>
 <!-- 页脚 -->
