@@ -74,6 +74,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".discussion-tag").click(function(){
         clickSwitch($(".choose"),$(this),"choose");
+        console.log($(event.target)[0].getAttribute("data-show"));
         getComment();
 //        console.log($(".choose"));
     });
