@@ -53,11 +53,6 @@
 <!--             </li> -->
         </ul>
 
-
-<?php 
-
-?>
-
         <div class="page">
             <a href="#"  name="pre">上一页</a>
             <a href="#" class="page-current" name="page1">1</a>

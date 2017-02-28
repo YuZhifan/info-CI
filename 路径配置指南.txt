@@ -1,4 +1,4 @@
-1、配置APACHE的httpd.conf中的DocumentRoot和directory
-2、配置application->config.php中的$config['base_url']
+﻿1、配置APACHE的httpd.conf中的DocumentRoot和directory
+2、配置application->config->config.php中的$config['base_url']
 3、配置views->common->common.js中的base_url变量
 4、导入application->sql中的sql文件
