@@ -3,7 +3,7 @@
 <!--登陆条-->
 <div id="loginBar" data-status="YES">
     <a href="#">关于我们</a>
-	<a href=<?=base_url().'index.php/safeQuit'?>>注销</a>
-    <a href=<?=base_url().'index.php/admin'?>><?=$_SESSION[user_nicename]?></a>
+	<a href=<?=base_url().'safeQuit'?>>注销</a>
+    <a href=<?=base_url().'admin'?>><?=$_SESSION[user_nicename]?></a>
 	
 </div>

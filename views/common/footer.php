@@ -2,7 +2,7 @@
     <div class="friendLink">
         <ul class="friendLink-list">
             <li><a href="#" title="返回顶部" rel="nofollow">返回顶部</a></li>
-            <li ><a href=<?=base_url().'index.php'?> title="学校首页" rel="nofollow">学校首页</a></li>
+            <li ><a href=<?=base_url()?> title="学校首页" rel="nofollow">学校首页</a></li>
             <li ><a href="#" title="新闻动态" rel="nofollow">新闻动态</a></li>
             <li ><a href="#" title="关于我们" rel="nofollow">关于我们</a></li>
             <li><a href="#" title="联系我们" rel="nofollow">联系我们</a></li>

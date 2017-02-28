@@ -12,13 +12,13 @@
             <span></span>
         </button>
         <ul class="nav">
-            <li><a href=<?=base_url().'index.php'?> class="nav-index">首页</a></li>
-            <li><a href=<?=base_url().'index.php/video'?> class="nav-video">教学录像</a></li>
-            <li><a href=<?=base_url().'index.php/exercise'?> class="nav-exercise">自测训练</a></li>
-            <li><a href=<?=base_url().'index.php/discussion'?> class="nav-discussion">交流讨论</a></li>
-            <li><a href=<?=base_url().'index.php/introduction'?> class="nav-introduction" >课程介绍</a></li>
-            <li><a href=<?=base_url().'index.php/resource'?> class="nav-resource">资源下载</a></li>
-            <li><a href=<?=base_url().'index.php/feedback'?> class="nav-feedback">评价反馈</a></li>
+            <li><a href=<?=base_url()?> class="nav-index">首页</a></li>
+            <li><a href=<?=base_url().'video'?> class="nav-video">教学录像</a></li>
+            <li><a href=<?=base_url().'exercise'?> class="nav-exercise">自测训练</a></li>
+            <li><a href=<?=base_url().'discussion'?> class="nav-discussion">交流讨论</a></li>
+            <li><a href=<?=base_url().'introduction'?> class="nav-introduction" >课程介绍</a></li>
+            <li><a href=<?=base_url().'resource'?> class="nav-resource">资源下载</a></li>
+            <li><a href=<?=base_url().'feedback'?> class="nav-feedback">评价反馈</a></li>
         </ul>
     </div>
 </div>

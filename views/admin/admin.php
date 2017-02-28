@@ -26,18 +26,18 @@ if(!isset($_SESSION['name'])||$_SESSION[admin]!=1){
 				</div>
 				<div id="left_bottom">
 				<ul id="select">
-					<li><a href=<?=base_url().'index.php/userinfo'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;个人信息</a></li>
+					<li><a href=<?=base_url().'userinfo'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;个人信息</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;录像管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;自测管理</a></li>
 					<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;下载管理</a></li>
-					<li><a href=<?=base_url().'index.php/showdata'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;查看数据</a></li>
+					<li><a href=<?=base_url().'showdata'?> target="show">&nbsp;&nbsp;&nbsp;&nbsp;查看数据</a></li>
 				</ul>
 				</div>
 			</div>
 			<div id="main_right">
 				<div id="right_top">
 <!-- 				<span>&nbsp;<a href="#">注销</a>&nbsp;&nbsp;&nbsp;</span> -->
-				<span><a href=<?=base_url().'index.php'?>>返回主页&nbsp;&nbsp;</a></span>
+				<span><a href=<?=base_url()?>>返回主页&nbsp;&nbsp;</a></span>
 				</div>
 				<div id="right_bottom">
 				<iframe name="show" ></iframe>
