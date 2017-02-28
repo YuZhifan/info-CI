@@ -22,23 +22,23 @@
         <a href="#" data-type="former">往年试题</a>
     </div>
     <ul class="type-list chapter">
-        <li><a href="#" data-ch="1">第一章</a></li>
-        <li><a href="#" data-ch="2">第二章</a></li>
-        <li><a href="#" data-ch="3">第三章</a></li>
-        <li><a href="#" data-ch="4">第四章</a></li>
-        <li><a href="#" data-ch="5">第五章</a></li>
-        <li><a href="#" data-ch="6">第六章</a></li>
-        <li><a href="#" data-ch="7">第七章</a></li>
-        <li><a href="#" data-ch="8">第八章</a></li>
+        <li><a href="#" data-ch="1" >第一章</a></li>
+        <li><a href="#" data-ch="2" >第二章</a></li>
+        <li><a href="#" data-ch="3" >第三章</a></li>
+        <li><a href="#" data-ch="4" >第四章</a></li>
+        <li><a href="#" data-ch="5" >第五章</a></li>
+        <li><a href="#" data-ch="6" >第六章</a></li>
+        <li><a href="#" data-ch="7" >第七章</a></li>
+        <li><a href="#" data-ch="8" >第八章</a></li>
     </ul>
     <ul class="type-list simulation dis-none">
         <li><a href="#">开始测试</a></li>
         <li><a href="#">选择范围</a></li>
     </ul>
     <ul class="type-list former dis-none">
-        <li><a href="#">12年A卷</a></li>
-        <li><a href="#">12年B卷</a></li>
-        <li><a href="#">13年A卷</a></li>
+        <li><a href="#" data-ch="1">12年A卷</a></li>
+        <li><a href="#" data-ch="2">12年B卷</a></li>
+        <li><a href="#" data-ch="3">13年A卷</a></li>
         <li><a href="#">13年B卷</a></li>
         <li><a href="#">14年A卷</a></li>
         <li><a href="#">14年B卷</a></li>
@@ -64,7 +64,7 @@
 <div class="content-wrap">
     <p href="#" class="bread-crumb">请选择自测题类型</p>
     <div class="content">
-
+		<iframe name="show" width="100%" height="100%" class="content-frame"></iframe>
     </div>
 </div>
 <!--页脚-->

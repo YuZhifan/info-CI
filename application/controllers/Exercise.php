@@ -26,4 +26,10 @@ class Exercise extends CI_Controller {
 		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
 		$this->load->view('exercise\exercise',$data);
 	}
+	
+	public function get($chapter_id)
+	{
+		$this->load->model(Exercise_model);
+		$this->Exercise_model->get($chapter_id);
+	}
 }

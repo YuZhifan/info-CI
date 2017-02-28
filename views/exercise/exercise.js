@@ -4,7 +4,27 @@
 
 $(document).ready(function(){
     $(".nav-exercise").addClass("nav-current");
+    getComment(1);
 });
+
+function getComment(comment_type=1){
+	$.get(INFO.base_url+"/exercise/get/"+comment_type,function(json){
+    	var data = JSON.parse(json);
+    	$(".content").empty();
+    	var qid = 1;
+    	for(list in data.results){
+        	$(".content").append(
+//        			'<p class="content-row-title">' +data.results[list].comment+'</p>'+
+        			'<p class="content-row-title">' +
+        			qid+'、'+
+        			data.results[list].question+
+        			'</p>'+
+            		'</li>'
+          );	
+        	qid++;
+    	}
+    });
+}  
 
 //选择类型
 $(document).ready(function(){
@@ -21,6 +41,19 @@ $(document).ready(function(){
             change(select,current);
             $(".bread-crumb").html(select.text() + " &#62;");
         }
+    });
+    
+    $(".chapter li a").click(function(){
+        var select = $(this);
+        var chapter_id = select.data("ch");
+        console.log(chapter_id);
+        	getComment(chapter_id);
+    });
+    $(".former li a").click(function(){
+        var select = $(this);
+        var chapter_id = select.data("ch");
+        console.log(chapter_id);
+        	getComment(chapter_id);
     });
 
 
@@ -62,3 +95,29 @@ $(document).ready(function(){
         console.log("取消选择范围");
     });
 });
+
+$(document).ready(function(){
+    $(".discussion-tag").click(function(){
+       clickSwitch($(".choose"),$(this),"choose");
+       var comment_type = $(event.target)[0].getAttribute("data-show");
+//        console.log(comment_type);
+        switch(comment_type)
+        {
+	        case "all":
+				getComment(0);
+				break;
+			case "review":
+				getComment(1);
+				break;
+			case "question":
+				getComment(2);
+				break;
+			case "comment":
+				getComment(3);
+				break;
+			default:
+				getComment(0);
+			}
+    });
+});
+

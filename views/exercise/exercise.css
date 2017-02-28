@@ -55,11 +55,55 @@
 
 .content-wrap{
     width:96%;
-    min-height:400px;
+    min-height:100px;
     /*border:1px solid #ccc;*/
     min-width:500px;
     margin:0 auto;
     background-color: #EEE;
+}
+
+.content{
+    width:98%;
+    min-height:100px;
+}
+
+.content-list{
+    margin-top:2em;
+}
+
+.content-row{
+    overflow: hidden;
+    margin:1em;
+}
+.content-row img{
+    float: left;
+    width:50px;
+    height:50px;
+    padding:2px;
+    border:1px solid #ccc;
+    background-color: #EEE;
+    margin-right:.6em;
+}
+
+.content-row-title{
+    color:#222;
+    margin:0 0 .5em 63px;
+    padding-bottom:.2em;
+    border-bottom:1px dotted #4EC4FE;
+}
+
+.content-row-title strong{
+    margin-right:1em;
+}
+
+.content-row-title span{
+    font-size:14px;
+    color:#333;
+}
+
+.discussion-row p{
+    margin-left:63px;
+    font-size: 15px;
 }
 
 .bread-crumb{
