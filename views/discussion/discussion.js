@@ -74,8 +74,25 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".discussion-tag").click(function(){
         clickSwitch($(".choose"),$(this),"choose");
-        getComment();
-//        console.log($(".choose"));
+        var comment_type = $(event.target)[0].getAttribute("data-show");
+//        console.log(comment_type);
+        switch(comment_type)
+        {
+	        case "all":
+				getComment(0);
+				break;
+			case "review":
+				getComment(1);
+				break;
+			case "question":
+				getComment(2);
+				break;
+			case "comment":
+				getComment(3);
+				break;
+			default:
+				getComment(0);
+			}
     });
 });
 
