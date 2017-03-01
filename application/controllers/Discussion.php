@@ -62,11 +62,9 @@ class Discussion extends CI_Controller {
 		return $query->result();
 	}
 	
-	public function getComment(){
-		$comment_type = $this->input->get('comment_type');
-		$page_number = $this->input->get('page_number');
+	public function getComment($comment_type=NULL){
 		$this->load->model(Discussion_model);
-		return $this->Discussion_model->get($comment_type,$page_number);
+		return $this->Discussion_model->get($comment_type);
 	}
 	
 	public function fenye(){

@@ -239,7 +239,6 @@ a{text-decoration: none;}
 /*
 * 分页按钮
 */
-/*
 .page{
     width: 400px;
     position: absolute;
@@ -249,11 +248,6 @@ a{text-decoration: none;}
     margin-left:-200px;
 }
 
-.pagination{
-	position: relative;
-	text-align:center;
-}
-*/
 .page input{
     display: inline;
     width:2em;
