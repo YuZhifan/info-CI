@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 /*非管理员不能进入后台管理界面，具体跳转到哪个页面待修改
 if(!isset($_SESSION['name'])||$_SESSION[admin]!=1){
