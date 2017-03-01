@@ -5,6 +5,8 @@
     <title>信息论-讨论交流</title>
     <link href=<?=base_url().'views/discussion/discussion.css'?> rel="stylesheet" type="text/css">
     <script src=<?=base_url().'views/common/jquery-2.2.3.min.js'?>></script>
+    <link rel="stylesheet" href=<?=base_url().'views/common/jqpagination.css'?>>
+	<script src=<?=base_url().'views/common/jquery.jqpagination.min.js'?>></script>
     <!--IE8只能支持jQuery1.9-->
     <!--[if lte IE 8]>
     <link href="__PUBLIC__/Common/Css/IE.css" rel="stylesheet" type="text/css">
@@ -53,18 +55,13 @@
 <!--             </li> -->
         </ul>
 
-        <div class="page">
-            <a href="#"  name="pre">上一页</a>
-            <a href="#" class="page-current" name="page1">1</a>
-            <a href="#" name="page2">2</a>
-            <a href="#" name="page3">3</a>
-            <a href="#" name="page4">4</a>
-            <a href="#" name="page5" class="page-last">5</a>
-            <a href="#" name="next">下一页</a>
-            <input type="text" />
-            <a href="#" name="jump">跳转到</a>
-
-        </div>
+        <div class="pagination" >
+		  <a href="#" class="first" data-action="first">&laquo;</a>
+		  <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+		  <input type="text" readonly="readonly" data-max-page="40" />
+		  <a href="#" class="next" data-action="next">&rsaquo;</a>
+		  <a href="#" class="last" data-action="last">&raquo;</a>
+		</div>
     </div>
 </div>
 <!--页脚-->
