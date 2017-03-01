@@ -2,42 +2,55 @@
  * Created by Felix on 2016/4/23.
  */
 
+var comment_type_num = 0; 
+
 $(document).ready(function(){
     $(".nav-discussion").addClass("nav-current");
     getComment();
 });
 
+$('.pagination').jqPagination({
+//	  link_string : '/?page={page_number}',
+//	  current_page: 5, //设置当前页 默认为1
+//	  max_page : 40, //设置最大页 默认为1
+//	  page_string : '当前第{current_page}页,共{max_page}页',
+	  paged : function(page) {
+	      //回发事件。。。
+		  console.log(comment_type_num);
+		  getComment(comment_type_num,page);
+	      }
+	});
 
 //分页跳转
-$(document).ready(function(){
-    function jump(current,newPage){
-        current.removeClass("page-current");
-        newPage.addClass("page-current");
-        console.log("跳转到第 " + newPage.attr("name").replace(/[^0-9]/ig,"") + " 页");
-    }
-    var Count = 5;
-    $(".page a").click(function(){
-        var current = $(".page-current");
-        var newPage = $(this);
-        var pageName = newPage.attr("name");
-        switch(pageName){
-            case "pre"://上一页
-                if(current.attr("name") !== "page1"){
-                    jump(current, current.prev());
-                }
-                break;
-            case "next"://下一页
-                if(current.attr("name") !== $(".page-last").attr("name")){
-                    jump(current, current.next());
-                }
-                break;
-            default://某一页
-                jump(current,newPage);
-                break;
-        }
-
-    });
-});
+//$(document).ready(function(){
+//    function jump(current,newPage){
+//        current.removeClass("page-current");
+//        newPage.addClass("page-current");
+//        console.log("跳转到第 " + newPage.attr("name").replace(/[^0-9]/ig,"") + " 页");
+//    }
+//    var Count = 5;
+//    $(".page a").click(function(){
+//        var current = $(".page-current");
+//        var newPage = $(this);
+//        var pageName = newPage.attr("name");
+//        switch(pageName){
+//            case "pre"://上一页
+//                if(current.attr("name") !== "page1"){
+//                    jump(current, current.prev());
+//                }
+//                break;
+//            case "next"://下一页
+//                if(current.attr("name") !== $(".page-last").attr("name")){
+//                    jump(current, current.next());
+//                }
+//                break;
+//            default://某一页
+//                jump(current,newPage);
+//                break;
+//        }
+//
+//    });
+//});
 
 
 //提交表单
@@ -73,43 +86,50 @@ $(document).ready(function(){
 //选择标签
 $(document).ready(function(){
     $(".discussion-tag").click(function(){
-       clickSwitch($(".choose"),$(this),"choose");
+//       clickSwitch($(".choose"),$(this),"choose");
        var comment_type = $(event.target)[0].getAttribute("data-show");
 //        console.log(comment_type);
-        switch(comment_type)
-        {
-	        case "all":
-				getComment(0);
-				break;
-			case "review":
-				getComment(1);
-				break;
-			case "question":
-				getComment(2);
-				break;
-			case "comment":
-				getComment(3);
-				break;
-			default:
-				getComment(0);
-			}
+       comment_type_num = getCommentTypeNum(comment_type);
+       getComment(comment_type_num);
     });
 });
 
-function getComment(comment_type=0){
-	$.get(INFO.base_url+"/discussion/getComment/"+comment_type,function(json){
-    	var data = JSON.parse(json);
-    	$(".discussion-list").empty();
-    	for(list in data.results){
-        	$(".discussion-list").append(
-            		'<li class="discussion-row">' +
-            		'<img src='+INFO.base_url+'/'+data.results[list].avatar+'>'+
-            		'<p class="discussion-row-title">' +
-            				'<strong>'+data.results[list].user_nicename+'</strong><span>'+data.results[list].comment_time+'</span>'+
-            		'</p>'+
-            		'<p>'+data.results[list].comment+'</p>'+
-            		'</li>'
-          );	
-    	}
+function getCommentTypeNum(comment_type){
+    console.log(comment_type);
+    switch(comment_type)
+    {
+        case "all":
+			return 0;
+		case "review":
+			return 1;
+		case "question":
+			return 2;
+		case "comment":
+			return 3;
+		default:
+			return 0;
+		}
+}
+
+function getComment(comment_type=0,page_number=1){
+	$.get(INFO.base_url+"/discussion/getComment/?comment_type="+comment_type+"&page_number="+page_number,function(json){
+    	var lists = JSON.parse(json);
+    	showComment(lists);
     });
 }  
+
+function showComment(lists){
+	console.log("lists:"+lists);
+	$(".discussion-list").empty();
+	for(index in lists.results){
+    	$(".discussion-list").append(
+        		'<li class="discussion-row">' +
+        		'<img src='+INFO.base_url+'/'+lists.results[index].avatar+'>'+
+        		'<p class="discussion-row-title">' +
+        				'<strong>'+lists.results[index].user_nicename+'</strong><span>'+lists.results[index].comment_time+'</span>'+
+        		'</p>'+
+        		'<p>'+lists.results[index].comment+'</p>'+
+        		'</li>'
+      );	
+	}
+	}
