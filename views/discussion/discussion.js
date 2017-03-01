@@ -124,7 +124,7 @@ function showComment(lists){
 	for(index in lists.results){
     	$(".discussion-list").append(
         		'<li class="discussion-row">' +
-        		'<img src='+INFO.base_url+lists.results[index].avatar+'>'+
+        		'<img src='+INFO.base_url+'/'+lists.results[index].avatar+'>'+
         		'<p class="discussion-row-title">' +
         				'<strong>'+lists.results[index].user_nicename+'</strong><span>'+lists.results[index].comment_time+'</span>'+
         		'</p>'+
