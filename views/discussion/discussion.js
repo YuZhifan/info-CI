@@ -3,6 +3,30 @@
  */
 
 var comment_type_num = 0; 
+var page_size = 10;
+
+function getMaxPage(){
+	var max_pagee = 1;//默认分页
+	$.ajax({ 
+		url: INFO.base_url+"/discussion/getMaxPage/?comment_type="+comment_type_num+"&max_page="+page_size, 
+		data: "json", 
+		async:false,
+		success: function(data){
+		var lists = JSON.parse(data);
+        max_pagee = lists.results.max_page;
+        console.log("max_pagee="+max_pagee);
+      }});
+	return max_pagee;
+//	
+	
+//	$.get(INFO.base_url+"/discussion/getMaxPage/?comment_type="+comment_type_num+"&max_page="+page_size,function(json){
+//    	var lists = JSON.parse(json);
+//    	max_pagee = lists.results.max_page;
+//    	console.log("max_pagee="+max_pagee);
+//    	
+//    	return false;
+//    });
+}
 
 $(document).ready(function(){
     $(".nav-discussion").addClass("nav-current");
@@ -10,13 +34,12 @@ $(document).ready(function(){
 });
 
 $('.pagination').jqPagination({
-//	  link_string : '/?page={page_number}',
+//	  link_string : '/discussion?page={page_number}&max_page=20',
 //	  current_page: 5, //设置当前页 默认为1
-//	  max_page : 40, //设置最大页 默认为1
+	  max_page : getMaxPage(), //设置最大页 默认为1
 //	  page_string : '当前第{current_page}页,共{max_page}页',
 	  paged : function(page) {
 	      //回发事件。。。
-		  console.log(comment_type_num);
 		  getComment(comment_type_num,page);
 	      }
 	});
@@ -112,14 +135,16 @@ function getCommentTypeNum(comment_type){
 }
 
 function getComment(comment_type=0,page_number=1){
-	$.get(INFO.base_url+"/discussion/getComment/?comment_type="+comment_type+"&page_number="+page_number,function(json){
+	$.get(INFO.base_url+"/discussion/getComment/?comment_type="+comment_type+"&page_number="+page_number+"&max_page=10",function(json){
     	var lists = JSON.parse(json);
     	showComment(lists);
+    	
     });
+	console.log($('.pagination'));
 }  
 
 function showComment(lists){
-	console.log("lists:"+lists);
+//	console.log("lists:"+lists);
 	$(".discussion-list").empty();
 	for(index in lists.results){
     	$(".discussion-list").append(

@@ -32,4 +32,21 @@ class Discussion_model extends CI_Model {
 		$this->Response_model->success($query->result_array());
 	}
 	
+	public function getTotalPage($comment_type,$page_size){
+		$this->load->database();
+		$this->db->from('tb_discussion')
+				->select('count(*) as TotalNum');
+		if(!empty($comment_type)){
+			$this->db->where(array('comment_type' => $comment_type));
+		}
+		$query = $this->db->get();
+		$arr = $query->result_array();
+		$total_num = (int)$arr[0][TotalNum];
+		$total_page = (int)($total_num+$page_size-1)/$page_size;
+		if(!empty($total_page)){
+			return $this->Response_model->success(array("max_page"=>$total_page));
+		}
+		return $this->Response_model->fail();
+	}
+	
 }

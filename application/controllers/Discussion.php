@@ -69,6 +69,13 @@ class Discussion extends CI_Controller {
 		return $this->Discussion_model->get($comment_type,$page_number);
 	}
 	
+	public function getMaxPage(){
+		$comment_type = is_null($this->input->get('comment_type'))?0:$this->input->get('comment_type');
+		$page_size = empty($this->input->get('page_size'))?10:$this->input->get('page_size');
+		$this->load->model(Discussion_model);
+		return $this->Discussion_model->getTotalPage($comment_type,$page_size);
+	}
+	
 	public function fenye(){
 // 		$this->load->library('pagination');
 		$this->load->model(DB_model);

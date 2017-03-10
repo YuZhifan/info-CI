@@ -19,6 +19,17 @@ class Response_model extends CI_Model {
 		echo(json_encode($responseArray));
 // 		exit();
 	}
+	
+	public function fail($array=null){
+	
+		$responseArray = array(
+				'status' => 10001,
+				'results' => $array,
+		);
+		// 		echo '<pre>';
+		echo(json_encode($responseArray));
+		// 		exit();
+	}
 
 
 }
