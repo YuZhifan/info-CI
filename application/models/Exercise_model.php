@@ -21,4 +21,14 @@ class Exercise_model extends CI_Model {
 		$this->Response_model->success($query->result_array());
 	}
 	
+	public function getRandom($amount)//获取随机测试的试题
+	{
+		$this->load->database();
+		$this->db->from('tb_question')
+		->order_by('Rand()', 'ASC')
+		->limit($amount);
+		$query = $this->db->get();
+		$this->Response_model->success($query->result_array());
+	}
+	
 }

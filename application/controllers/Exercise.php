@@ -32,4 +32,10 @@ class Exercise extends CI_Controller {
 		$this->load->model(Exercise_model);
 		$this->Exercise_model->get($chapter_id);
 	}
+	public function getRandom($amount)
+	{
+		$amount = is_numeric($amount)?$amount:10;
+		$this->load->model(Exercise_model);
+		$this->Exercise_model->getRandom($amount);
+	}
 }

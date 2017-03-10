@@ -26,6 +26,26 @@ function getComment(comment_type=1){
     });
 }  
 
+function getRandom($amount){
+	$.get(INFO.base_url+"/exercise/getRandom/"+$amount,function(json){
+    	var data = JSON.parse(json);
+    	$(".content").empty();
+    	var qid = 1;
+    	for(list in data.results){
+        	$(".content").append(
+//        			'<p class="content-row-title">' +data.results[list].comment+'</p>'+
+        			'<p class="content-row-title">' +
+        			qid+
+        			'、'+
+        			data.results[list].question+
+        			'</p>'+
+            		'</li>'
+          );	
+        	qid++;
+    	}
+    });
+}  
+
 //选择类型
 $(document).ready(function(){
     function change(show,hidden){
@@ -78,6 +98,7 @@ $(document).ready(function(){
     $(".simulation a:first-child").click(function(){//开始测试
         console.log("开始测试");
         $(".bread-crumb").html("模拟测试 &#62;");
+        getRandom(5);
     });
 
     $(".simulation a:eq(1)").click(function(){//选择测试范围
