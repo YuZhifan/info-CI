@@ -10,9 +10,9 @@ class LoginBar_model extends CI_Model {
 		parent::__construct();
 		if($_SESSION[username]&&$_SESSION[id])
 		{
-			$this->load->view('common\loggedBar');
+			$this->load->view('common/loggedBar');
 		}else{
-			$this->load->view('common\loginBar');
+			$this->load->view('common/loginBar');
 		}
 	}
 }

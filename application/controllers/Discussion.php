@@ -23,9 +23,9 @@ class Discussion extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
 		$this->load->model(DB_model);
-		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
-		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
-		$this->load->view('discussion\discussion', $data);
+		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
+		$this->load->view('discussion/discussion', $data);
 	}
 	
 	public function addComment()

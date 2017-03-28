@@ -12,6 +12,6 @@ class Resource_model extends CI_Model{
 			$data['src'] = $row['src'];
 			$data['cover']  =$row['cover'];
 			$data['type'] =$row['type'];
-			return $this->load->view('resource\videodownload',$data,TRUE);
+			return $this->load->view('resource/videodownload',$data,TRUE);
 	}
 }

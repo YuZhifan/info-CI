@@ -14,7 +14,7 @@ class Userinfo extends CI_Controller {
 		$result = $this->db->get()->result_array();
 
 		$this->load->helper('url');
-		$this->load->view('admin\userinfo',$result[0]);
+		$this->load->view('admin/userinfo',$result[0]);
 		$this->load->model(Userinfo_model);
 		
 	}

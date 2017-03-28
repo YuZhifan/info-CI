@@ -7,8 +7,8 @@ class Video extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
-		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
 		// $this->load->model(DB_model);
 		// $query=$this->DB_model->select("select *from tb_videocomment;");
 		// $row=$query->result_array();
@@ -46,8 +46,8 @@ class Video extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
-		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
 		$data['route'] = 'views/video/video/'.$route;
 		$this->load->view('video/video',$data);
 	}

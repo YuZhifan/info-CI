@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 		{
 			$this->load->helper('url');
 			$this->load->model(LoginBar_model);
-			$this->load->view('admin\admin');
+			$this->load->view('admin/admin');
 		}else{
 			header('Location:../index.php');
 		}

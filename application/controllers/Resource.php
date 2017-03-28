@@ -23,8 +23,8 @@ class Resource extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
-		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
+		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
 		$this->load->model(DB_model);
 		$query=$this->DB_model->select('select * from tb_resource;');
 		$this->load->model(Resource_model);
@@ -36,7 +36,7 @@ class Resource extends CI_Controller {
 			);
 		}
 		$data['list'] = $list;
-		$this->load->view('resource\resource',$data);
+		$this->load->view('resource/resource',$data);
 	}
 	
 	//测试用方法

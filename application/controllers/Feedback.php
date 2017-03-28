@@ -22,9 +22,9 @@ class Feedback extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model(LoginBar_model);
-		$data['infoNav'] = $this->load->view('common\nav', '', TRUE);
-		$data['infoFooter'] = $this->load->view('common\footer', '', TRUE);
-		$this->load->view('feedback\feedback',$data);	
+		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
+		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
+		$this->load->view('feedback/feedback',$data);	
 	}
 	
 	public function addFeedback()
