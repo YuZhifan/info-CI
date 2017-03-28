@@ -16,6 +16,7 @@ class Response_model extends CI_Model {
 				'results' => $array,
 		);
 // 		echo '<pre>';
+		header('Content-type: application/json');
 		echo(json_encode($responseArray));
 // 		exit();
 	}
@@ -27,6 +28,7 @@ class Response_model extends CI_Model {
 				'results' => $array,
 		);
 		// 		echo '<pre>';
+		header('Content-type: application/json');
 		echo(json_encode($responseArray));
 		// 		exit();
 	}
