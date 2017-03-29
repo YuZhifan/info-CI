@@ -127,7 +127,7 @@ $(document).ready(function(){
         $.getJSON({
             type:"GET",
             url:INFO.base_url + "index.php/video/comment",
-            success:function(data){
+            success:function(data){console.log(data);
                 var list = $("<ul class='comment-list'></ul>");
                 $.each(data, function(i,item){
                     list.append(

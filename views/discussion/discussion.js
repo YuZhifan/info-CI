@@ -11,8 +11,7 @@ function getMaxPage(){
 		url: INFO.base_url+"/discussion/getMaxPage/?comment_type="+comment_type_num+"&max_page="+page_size, 
 		data: "json", 
 		async:false,
-		success: function(data){
-		var lists = JSON.parse(data);
+		success: function(lists){
         max_pagee = lists.results.max_page;
         console.log("max_pagee="+max_pagee);
       }});
@@ -135,8 +134,8 @@ function getCommentTypeNum(comment_type){
 }
 
 function getComment(comment_type=0,page_number=1){
-	$.get(INFO.base_url+"/discussion/getComment/?comment_type="+comment_type+"&page_number="+page_number+"&max_page=10",function(json){
-    	var lists = JSON.parse(json);
+	$.get(INFO.base_url+"/discussion/getComment/?comment_type="+comment_type+"&page_number="+page_number+"&max_page=10",function(lists){
+    	//var lists = JSON.parse(json);
     	showComment(lists);
     	
     });
