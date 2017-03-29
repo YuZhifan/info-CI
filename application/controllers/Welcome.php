@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
 		$data['infoNav'] = $this->load->view('common/nav', '', TRUE);
 		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
 		$this->load->view('index/welcome_message',$data);
-		
+		log_message('error', 'INFO --> '.$this->input->ip_address().' --> Visit Welcome.php');
 		
 		
 		if($_SESSION[username]&&$_SESSION[id])
@@ -38,7 +38,10 @@ class Welcome extends CI_Controller {
 		$_SESSION[last_login_time] = mdate($datestring, $time);
 		$this->load->model(DB_model);
 		$_SESSION[last_login_ip]=$this->input->ip_address();
-// 		$this->DB_model->update("UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';");
+		$sql = "UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';";
+// 		$this->DB_model->update($sql);
+		log_message('error', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$sql);
+
 		}else{
 			// echo fasle;
 		}

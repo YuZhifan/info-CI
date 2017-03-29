@@ -71,6 +71,7 @@ class Login extends CI_Controller {
 	{
 		$this->load->library('encryption');
 		$query=$this->DB_model->select("select id,user_nicename,user_pass from tb_users where user_login = '".$this->input->post(username)."'");//可用于检测用户名是否已被注册
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
 		if ($query->result()!=null)
 		{
 			$row = $query->row();

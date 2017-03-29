@@ -18,6 +18,7 @@ class Exercise_model extends CI_Model {
 			$this->db->where(array('chapter_id' => $chapter_id));
 		}
 		$query = $this->db->get();
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
 		$this->Response_model->success($query->result_array());
 	}
 	
@@ -28,6 +29,7 @@ class Exercise_model extends CI_Model {
 		->order_by('Rand()', 'ASC')
 		->limit($amount);
 		$query = $this->db->get();
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
 		$this->Response_model->success($query->result_array());
 	}
 	

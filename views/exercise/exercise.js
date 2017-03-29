@@ -26,8 +26,7 @@ function getComment(comment_type=1){
 }  
 
 function getRandom($amount){
-	$.get(INFO.base_url+"/exercise/getRandom/"+$amount,function(json){
-    	var data = JSON.parse(json);
+	$.get(INFO.base_url+"/exercise/getRandom/"+$amount,function(data){
     	$(".content").empty();
     	var qid = 1;
     	for(list in data.results){

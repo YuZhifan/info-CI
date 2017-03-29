@@ -25,7 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://localhost/www/Test/';
 //$config['base_url'] = 'http://192.168.199.151/www/Test/';
-$config['base_url'] = 'http://localhost/info-CI';
+$config['base_url'] = 'http://localhost/';
+
 
 
 /*
@@ -216,7 +217,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = array(1);
 
 /*
 |--------------------------------------------------------------------------
@@ -227,7 +228,7 @@ $config['log_threshold'] = 0;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = APPPATH.'logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -483,6 +484,7 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
+date_default_timezone_set("Asia/Shanghai");
 
 /*
 |--------------------------------------------------------------------------

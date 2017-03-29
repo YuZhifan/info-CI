@@ -27,6 +27,7 @@ class Resource extends CI_Controller {
 		$data['infoFooter'] = $this->load->view('common/footer', '', TRUE);
 		$this->load->model(DB_model);
 		$query=$this->DB_model->select('select * from tb_resource;');
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
 		$this->load->model(Resource_model);
 		foreach($query->result_array() as $row)
 		{
