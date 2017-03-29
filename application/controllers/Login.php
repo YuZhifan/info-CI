@@ -76,7 +76,7 @@ class Login extends CI_Controller {
 			$row = $query->row();
 			if (isset($row))
 			{
-				if(bin2hex(mhash(MHASH_MD5, $str))==$row->user_pass)
+				if(hash('md5', $str,false)==$row->user_pass)
 				{
 					$_SESSION[id]=$row->id;
 					$_SESSION[user_nicename]=$row->user_nicename;
