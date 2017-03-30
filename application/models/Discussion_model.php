@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Discussion_model extends CI_Model {
 	public function __construct()
 	{
@@ -29,7 +31,7 @@ class Discussion_model extends CI_Model {
 			$this->db->where(array('comment_type' => $comment_type));
 		}
 		$query = $this->db->get();
-		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> Execute sql:'.$this->db->last_query()));
 		$this->Response_model->success($query->result_array());
 	}
 	
@@ -41,7 +43,7 @@ class Discussion_model extends CI_Model {
 			$this->db->where(array('comment_type' => $comment_type));
 		}
 		$query = $this->db->get();
-		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$this->db->last_query()));
+		log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> Execute sql:'.$this->db->last_query()));
 		$arr = $query->result_array();
 		$total_num = (int)$arr[0][TotalNum];
 		$total_page = (int)($total_num+$page_size-1)/$page_size;

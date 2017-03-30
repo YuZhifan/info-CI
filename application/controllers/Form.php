@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 //c测试用 没什么卵用
 class Form extends CI_Controller {
 
@@ -19,7 +20,7 @@ class Form extends CI_Controller {
 		);
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');        
 
         
         

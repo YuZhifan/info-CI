@@ -40,7 +40,7 @@ class Welcome extends CI_Controller {
 		$_SESSION[last_login_ip]=$this->input->ip_address();
 		$sql = "UPDATE tb_users SET last_login_time = '".$_SESSION[last_login_time]."',last_login_ip='".$_SESSION[last_login_ip]."' WHERE user_login = '".$_SESSION[username]."';";
 // 		$this->DB_model->update($sql);
-		log_message('error', 'INFO --> '.$this->input->ip_address().' --> execute sql:'.$sql);
+		log_message('error', 'INFO --> '.$this->input->ip_address().' --> Execute sql:'.$sql);
 
 		}else{
 			// echo fasle;
