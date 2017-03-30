@@ -16,7 +16,7 @@ class Upload extends CI_Controller {
 						array('avatar'=>'views/upload/avatar/'.$file_name.'.tmp'),
 						array('user_login'=>$username)
 						);
-        		
+				log_message('error', preg_replace('/\s+/', ' ', 'INFO --> '.$this->input->ip_address().' --> Execute sql:'.$this->db->last_query()));
         		echo FCPATH."views/upload/avatar/".$file_name.".tmp";
         	}else{
         		echo 'error';
