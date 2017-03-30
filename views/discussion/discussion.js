@@ -107,8 +107,8 @@ $(document).ready(function(){
 
 //选择标签
 $(document).ready(function(){
-    $(".discussion-tag").click(function(){
-//       clickSwitch($(".choose"),$(this),"choose");
+    $(".discussion-tag input").click(function(){
+       clickSwitch($(".choose"),$(this),"choose");
        var comment_type = $(event.target)[0].getAttribute("data-show");
 //        console.log(comment_type);
        comment_type_num = getCommentTypeNum(comment_type);
@@ -156,4 +156,5 @@ function showComment(lists){
         		'</li>'
       );	
 	}
-	}
+}
+
